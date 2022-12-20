@@ -1,9 +1,6 @@
-package com.programmers.githubapi_00.GitHubService
+package com.programmers.githubapiMVC_00.Model.GitHubService
 
-import android.media.MediaCodec.QueueRequest
-import com.programmers.githubapi_00.UserResponse
-import com.programmers.githubapi_00.UsersData
-import retrofit2.Call
+import com.programmers.githubapiMVC_00.Model.UserResponse
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query
