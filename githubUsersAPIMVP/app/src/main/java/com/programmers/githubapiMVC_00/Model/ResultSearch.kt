@@ -22,7 +22,7 @@ class ResultSearch {
                 if (response.isSuccessful) {
                     if (response.body()?.items != null) {
                         var resultUsersList =  response.body()?.items!!
-                        ResultUsersList();
+                    //    ResultUsersList();
                     }
                 }
             }
@@ -32,8 +32,8 @@ class ResultSearch {
         })
     }
 
-    fun ResultUsersList(): ArrayList<UsersData> {
-        return resultUsersList
-    }
+//    fun ResultUsersList(): ArrayList<UsersData> {
+//        return resultUsersList
+//    }
 
 }
