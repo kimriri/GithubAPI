@@ -1,4 +1,4 @@
-package com.programmers.githubapiMVC_00.Model.Data
+package com.programmers.githubapiMVC_00.GithubService.Data
 
 import com.google.gson.annotations.SerializedName
 
