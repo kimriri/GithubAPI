@@ -6,8 +6,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.programmers.githubapiMVC_00.Model.GithubService.Data.UserResponse
-import com.programmers.githubapiMVC_00.Model.GithubService.Data.UsersData
+import com.programmers.githubapiMVC_00.ViewModel.Data.UserResponse
+import com.programmers.githubapiMVC_00.ViewModel.Data.UsersData
 import com.programmers.githubapiMVC_00.Model.GithubService.UsersService.UsersServiceManager
 import com.programmers.githubapiMVC_00.ViewModel.MainViewModel
 import com.programmers.githubapi_00.databinding.ActivityMainBinding
@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         listAdapter = UsersAdapter()
+
 
         binding.ivMainSearch.setOnClickListener {
             resultSearch(binding.etMain.text.toString())

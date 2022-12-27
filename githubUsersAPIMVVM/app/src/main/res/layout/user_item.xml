@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingHorizontal="20dp"
-    android:paddingVertical="10dp"
-    android:background="@color/white"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="user"
+            type="com.programmers.githubapiMVC_00.ViewModel.Data.UsersData"/>
+
+        <variable
+            name="userimg"
+            type="com.programmers.githubapiMVC_00.View.BindingConversions"/>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:background="@color/white">
 
     <ImageView
         android:id="@+id/users_item_img_photo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@color/black"
+        app:imageUrl="@{userimg.loadImage(user.avatar_url)}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,6 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/name"
+        android:text="@{user.login}"
         android:textColor="@color/black"
         android:layout_marginStart="22dp"
         android:textSize="24sp"
@@ -41,3 +54,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/users_item_img_photo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

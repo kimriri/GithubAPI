@@ -4,6 +4,9 @@ ADDED from /Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubU
 INJECTED from /Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml:2:1-32:12
 INJECTED from /Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml:2:1-32:12
 INJECTED from /Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml:2:1-32:12
+MERGED from [androidx.databinding:databinding-adapters:7.3.1] /Users/eunmikim/.gradle/caches/transforms-3/edacc3688a2e22b21331f499cdc5980c/transformed/databinding-adapters-7.3.1/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.databinding:databinding-ktx:7.3.1] /Users/eunmikim/.gradle/caches/transforms-3/72858fdceebb75785080ded3d4e3ef1d/transformed/databinding-ktx-7.3.1/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.databinding:databinding-runtime:7.3.1] /Users/eunmikim/.gradle/caches/transforms-3/220b789892534b6d06f1baf067f2e11d/transformed/databinding-runtime-7.3.1/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.databinding:viewbinding:7.3.1] /Users/eunmikim/.gradle/caches/transforms-3/c16f5e529333fb99c2aff8bb96a0d235/transformed/viewbinding-7.3.1/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.fragment:fragment-ktx:1.5.5] /Users/eunmikim/.gradle/caches/transforms-3/9c83640a049a73cdb11cd32183205952/transformed/fragment-ktx-1.5.5/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.7.0] /Users/eunmikim/.gradle/caches/transforms-3/53edefe15d403f8467620aa121e38059/transformed/material-1.7.0/AndroidManifest.xml:17:1-26:12
@@ -37,9 +40,10 @@ MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/eunmikim/.grad
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/aa8ac483add921dafa22eb66b84f2064/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.1.0] /Users/eunmikim/.gradle/caches/transforms-3/164e3c0afb92a7e3b5c15f9935adbebd/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.8.0] /Users/eunmikim/.gradle/caches/transforms-3/205feb206244c8c1b4b56fcdc8d69988/transformed/core-1.8.0/AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/d61520087bb53d23a4e3afad5636d15d/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.4.0] /Users/eunmikim/.gradle/caches/transforms-3/e3e2ad842672ad627f300545a3ef191a/transformed/lifecycle-service-2.4.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/eunmikim/.gradle/caches/transforms-3/a8199b6bb025d711471524267dd78014/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:17:1-37:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/eunmikim/.gradle/caches/transforms-3/ecb295b800ded09051f724a4ba193524/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/d61520087bb53d23a4e3afad5636d15d/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] /Users/eunmikim/.gradle/caches/transforms-3/0df7e7742d8f8e795c92f4553aaca675/transformed/savedstate-ktx-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/eunmikim/.gradle/caches/transforms-3/49b48222c9092f86b8f1b7ce566730b4/transformed/savedstate-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/3d0b12a6a2875ebc8055ad98f7863014/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -145,6 +149,12 @@ uses-sdk
 INJECTED from /Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml
 INJECTED from /Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml
+MERGED from [androidx.databinding:databinding-adapters:7.3.1] /Users/eunmikim/.gradle/caches/transforms-3/edacc3688a2e22b21331f499cdc5980c/transformed/databinding-adapters-7.3.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.databinding:databinding-adapters:7.3.1] /Users/eunmikim/.gradle/caches/transforms-3/edacc3688a2e22b21331f499cdc5980c/transformed/databinding-adapters-7.3.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.databinding:databinding-ktx:7.3.1] /Users/eunmikim/.gradle/caches/transforms-3/72858fdceebb75785080ded3d4e3ef1d/transformed/databinding-ktx-7.3.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.databinding:databinding-ktx:7.3.1] /Users/eunmikim/.gradle/caches/transforms-3/72858fdceebb75785080ded3d4e3ef1d/transformed/databinding-ktx-7.3.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.databinding:databinding-runtime:7.3.1] /Users/eunmikim/.gradle/caches/transforms-3/220b789892534b6d06f1baf067f2e11d/transformed/databinding-runtime-7.3.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.databinding:databinding-runtime:7.3.1] /Users/eunmikim/.gradle/caches/transforms-3/220b789892534b6d06f1baf067f2e11d/transformed/databinding-runtime-7.3.1/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.databinding:viewbinding:7.3.1] /Users/eunmikim/.gradle/caches/transforms-3/c16f5e529333fb99c2aff8bb96a0d235/transformed/viewbinding-7.3.1/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.databinding:viewbinding:7.3.1] /Users/eunmikim/.gradle/caches/transforms-3/c16f5e529333fb99c2aff8bb96a0d235/transformed/viewbinding-7.3.1/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.fragment:fragment-ktx:1.5.5] /Users/eunmikim/.gradle/caches/transforms-3/9c83640a049a73cdb11cd32183205952/transformed/fragment-ktx-1.5.5/AndroidManifest.xml:20:5-22:41
@@ -211,12 +221,14 @@ MERGED from [androidx.customview:customview:1.1.0] /Users/eunmikim/.gradle/cache
 MERGED from [androidx.customview:customview:1.1.0] /Users/eunmikim/.gradle/caches/transforms-3/164e3c0afb92a7e3b5c15f9935adbebd/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.8.0] /Users/eunmikim/.gradle/caches/transforms-3/205feb206244c8c1b4b56fcdc8d69988/transformed/core-1.8.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.8.0] /Users/eunmikim/.gradle/caches/transforms-3/205feb206244c8c1b4b56fcdc8d69988/transformed/core-1.8.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/d61520087bb53d23a4e3afad5636d15d/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/d61520087bb53d23a4e3afad5636d15d/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.4.0] /Users/eunmikim/.gradle/caches/transforms-3/e3e2ad842672ad627f300545a3ef191a/transformed/lifecycle-service-2.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-service:2.4.0] /Users/eunmikim/.gradle/caches/transforms-3/e3e2ad842672ad627f300545a3ef191a/transformed/lifecycle-service-2.4.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/eunmikim/.gradle/caches/transforms-3/a8199b6bb025d711471524267dd78014/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/eunmikim/.gradle/caches/transforms-3/a8199b6bb025d711471524267dd78014/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/eunmikim/.gradle/caches/transforms-3/ecb295b800ded09051f724a4ba193524/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/eunmikim/.gradle/caches/transforms-3/ecb295b800ded09051f724a4ba193524/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/d61520087bb53d23a4e3afad5636d15d/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/d61520087bb53d23a4e3afad5636d15d/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] /Users/eunmikim/.gradle/caches/transforms-3/0df7e7742d8f8e795c92f4553aaca675/transformed/savedstate-ktx-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] /Users/eunmikim/.gradle/caches/transforms-3/0df7e7742d8f8e795c92f4553aaca675/transformed/savedstate-ktx-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/eunmikim/.gradle/caches/transforms-3/49b48222c9092f86b8f1b7ce566730b4/transformed/savedstate-1.2.0/AndroidManifest.xml:20:5-22:41

@@ -1,7 +1,7 @@
 package com.programmers.githubapiMVC_00.Model.GithubService.UsersService
 
 import androidx.lifecycle.Observer
-import com.programmers.githubapiMVC_00.Model.GithubService.Data.UserResponse
+import com.programmers.githubapiMVC_00.ViewModel.Data.UserResponse
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query
