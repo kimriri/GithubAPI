@@ -1,4 +1,4 @@
-package com.programmers.githubapiMVC_00
+package com.programmers.githubapimvvm
 
 import org.junit.Test
 

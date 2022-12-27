@@ -5,11 +5,11 @@
     
                  
                        
-                                                                             
+                                                                           
 
                  
-                          
-                                                                            
+                           
+                            
 
            
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,7 +23,7 @@
         android:id="@+id/users_item_img_photo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:tag="binding_1"                             
+        android:tag="binding_1"       
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

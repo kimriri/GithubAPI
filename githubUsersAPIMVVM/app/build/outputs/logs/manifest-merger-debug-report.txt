@@ -11,6 +11,8 @@ MERGED from [androidx.databinding:viewbinding:7.3.1] /Users/eunmikim/.gradle/cac
 MERGED from [androidx.fragment:fragment-ktx:1.5.5] /Users/eunmikim/.gradle/caches/transforms-3/9c83640a049a73cdb11cd32183205952/transformed/fragment-ktx-1.5.5/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.7.0] /Users/eunmikim/.gradle/caches/transforms-3/53edefe15d403f8467620aa121e38059/transformed/material-1.7.0/AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/eunmikim/.gradle/caches/transforms-3/38043517c514ada7a9c17da61d45b16b/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
+MERGED from [io.coil-kt:coil:2.1.0] /Users/eunmikim/.gradle/caches/transforms-3/29d3380dbcb11f6ee6b629d1f5b7b183/transformed/coil-2.1.0/AndroidManifest.xml:2:1-9:12
+MERGED from [io.coil-kt:coil-base:2.1.0] /Users/eunmikim/.gradle/caches/transforms-3/7863166ee9602be962ca430ddee77bab/transformed/coil-base-2.1.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat-resources:1.5.1] /Users/eunmikim/.gradle/caches/transforms-3/07314dd07c6d151d1d21cf5484b5b880/transformed/appcompat-resources-1.5.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.5.1] /Users/eunmikim/.gradle/caches/transforms-3/35247393b79a5fe3c4f500e2adf3d76f/transformed/appcompat-1.5.1/AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:glide:4.10.0] /Users/eunmikim/.gradle/caches/transforms-3/1bc9b8e422b5025473cac95e4b101f19/transformed/glide-4.10.0/AndroidManifest.xml:2:1-12:12
@@ -47,14 +49,15 @@ MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/eunmikim/.gradle
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] /Users/eunmikim/.gradle/caches/transforms-3/0df7e7742d8f8e795c92f4553aaca675/transformed/savedstate-ktx-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/eunmikim/.gradle/caches/transforms-3/49b48222c9092f86b8f1b7ce566730b4/transformed/savedstate-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/3d0b12a6a2875ebc8055ad98f7863014/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/eunmikim/.gradle/caches/transforms-3/7f4858d3b05a121bbfdbd0f3702fd854/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /Users/eunmikim/.gradle/caches/transforms-3/db7d10c559a6664e7f927ee840c73ece/transformed/gifdecoder-4.10.0/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/eunmikim/.gradle/caches/transforms-3/7f4858d3b05a121bbfdbd0f3702fd854/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.5.1] /Users/eunmikim/.gradle/caches/transforms-3/c1b4ad55b3866ce5c4582c1c8b919d97/transformed/lifecycle-livedata-2.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.1] /Users/eunmikim/.gradle/caches/transforms-3/512e20b1c7fee3cb347fbcaa3f34cf1b/transformed/lifecycle-livedata-core-ktx-2.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /Users/eunmikim/.gradle/caches/transforms-3/9b72d3a0628617d3f17d9cb77d3f51cf/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/eunmikim/.gradle/caches/transforms-3/0de8b80e80221d3f31c9086666059ce1/transformed/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/eunmikim/.gradle/caches/transforms-3/b9bab58cadaff330d559da69256a0313/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/4ed59577b3c31daa698d7cd9567771e1/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/eunmikim/.gradle/caches/transforms-3/9310665e8422554e378471a54c8b4f68/transformed/exifinterface-1.3.3/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/de2279805fd1769856255174ea323925/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/a91d0e13601b70491790d353890fd533/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/eb096476208bed94cd51cc904aa804e3/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -97,10 +100,10 @@ MERGED from [androidx.core:core:1.8.0] /Users/eunmikim/.gradle/caches/transforms
 MERGED from [androidx.core:core:1.8.0] /Users/eunmikim/.gradle/caches/transforms-3/205feb206244c8c1b4b56fcdc8d69988/transformed/core-1.8.0/AndroidManifest.xml:24:5-89
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/eunmikim/.gradle/caches/transforms-3/a8199b6bb025d711471524267dd78014/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/eunmikim/.gradle/caches/transforms-3/a8199b6bb025d711471524267dd78014/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/eunmikim/.gradle/caches/transforms-3/7f4858d3b05a121bbfdbd0f3702fd854/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/eunmikim/.gradle/caches/transforms-3/7f4858d3b05a121bbfdbd0f3702fd854/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /Users/eunmikim/.gradle/caches/transforms-3/db7d10c559a6664e7f927ee840c73ece/transformed/gifdecoder-4.10.0/AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /Users/eunmikim/.gradle/caches/transforms-3/db7d10c559a6664e7f927ee840c73ece/transformed/gifdecoder-4.10.0/AndroidManifest.xml:9:5-20
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/eunmikim/.gradle/caches/transforms-3/7f4858d3b05a121bbfdbd0f3702fd854/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/eunmikim/.gradle/caches/transforms-3/7f4858d3b05a121bbfdbd0f3702fd854/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/eunmikim/.gradle/caches/transforms-3/b9bab58cadaff330d559da69256a0313/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/eunmikim/.gradle/caches/transforms-3/b9bab58cadaff330d559da69256a0313/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 	android:appComponentFactory
@@ -123,12 +126,12 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/eunmikim/.gradle/cac
 		ADDED from /Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml:15:9-50
 	android:dataExtractionRules
 		ADDED from /Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml:9:9-65
-activity#com.programmers.githubapiMVC_00.View.MainActivity
+activity#com.programmers.githubapimvvm.view.MainActivity
 ADDED from /Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml:17:9-29:20
 	android:exported
 		ADDED from /Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml:19:13-36
 	android:name
-		ADDED from /Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml:18:13-77
+		ADDED from /Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml:18:13-75
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from /Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml:20:13-24:29
 action#android.intent.action.MAIN
@@ -163,6 +166,10 @@ MERGED from [com.google.android.material:material:1.7.0] /Users/eunmikim/.gradle
 MERGED from [com.google.android.material:material:1.7.0] /Users/eunmikim/.gradle/caches/transforms-3/53edefe15d403f8467620aa121e38059/transformed/material-1.7.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/eunmikim/.gradle/caches/transforms-3/38043517c514ada7a9c17da61d45b16b/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/eunmikim/.gradle/caches/transforms-3/38043517c514ada7a9c17da61d45b16b/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [io.coil-kt:coil:2.1.0] /Users/eunmikim/.gradle/caches/transforms-3/29d3380dbcb11f6ee6b629d1f5b7b183/transformed/coil-2.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [io.coil-kt:coil:2.1.0] /Users/eunmikim/.gradle/caches/transforms-3/29d3380dbcb11f6ee6b629d1f5b7b183/transformed/coil-2.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [io.coil-kt:coil-base:2.1.0] /Users/eunmikim/.gradle/caches/transforms-3/7863166ee9602be962ca430ddee77bab/transformed/coil-base-2.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [io.coil-kt:coil-base:2.1.0] /Users/eunmikim/.gradle/caches/transforms-3/7863166ee9602be962ca430ddee77bab/transformed/coil-base-2.1.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat-resources:1.5.1] /Users/eunmikim/.gradle/caches/transforms-3/07314dd07c6d151d1d21cf5484b5b880/transformed/appcompat-resources-1.5.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.5.1] /Users/eunmikim/.gradle/caches/transforms-3/07314dd07c6d151d1d21cf5484b5b880/transformed/appcompat-resources-1.5.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.5.1] /Users/eunmikim/.gradle/caches/transforms-3/35247393b79a5fe3c4f500e2adf3d76f/transformed/appcompat-1.5.1/AndroidManifest.xml:20:5-44
@@ -235,10 +242,10 @@ MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/eunmikim/.gradle/cache
 MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/eunmikim/.gradle/caches/transforms-3/49b48222c9092f86b8f1b7ce566730b4/transformed/savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/3d0b12a6a2875ebc8055ad98f7863014/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/3d0b12a6a2875ebc8055ad98f7863014/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/eunmikim/.gradle/caches/transforms-3/7f4858d3b05a121bbfdbd0f3702fd854/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/eunmikim/.gradle/caches/transforms-3/7f4858d3b05a121bbfdbd0f3702fd854/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /Users/eunmikim/.gradle/caches/transforms-3/db7d10c559a6664e7f927ee840c73ece/transformed/gifdecoder-4.10.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /Users/eunmikim/.gradle/caches/transforms-3/db7d10c559a6664e7f927ee840c73ece/transformed/gifdecoder-4.10.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/eunmikim/.gradle/caches/transforms-3/7f4858d3b05a121bbfdbd0f3702fd854/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/eunmikim/.gradle/caches/transforms-3/7f4858d3b05a121bbfdbd0f3702fd854/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.5.1] /Users/eunmikim/.gradle/caches/transforms-3/c1b4ad55b3866ce5c4582c1c8b919d97/transformed/lifecycle-livedata-2.5.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.5.1] /Users/eunmikim/.gradle/caches/transforms-3/c1b4ad55b3866ce5c4582c1c8b919d97/transformed/lifecycle-livedata-2.5.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.1] /Users/eunmikim/.gradle/caches/transforms-3/512e20b1c7fee3cb347fbcaa3f34cf1b/transformed/lifecycle-livedata-core-ktx-2.5.1/AndroidManifest.xml:20:5-22:41
@@ -251,6 +258,8 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/eunmikim/.gradle/cac
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/eunmikim/.gradle/caches/transforms-3/b9bab58cadaff330d559da69256a0313/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/4ed59577b3c31daa698d7cd9567771e1/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/4ed59577b3c31daa698d7cd9567771e1/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/eunmikim/.gradle/caches/transforms-3/9310665e8422554e378471a54c8b4f68/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/eunmikim/.gradle/caches/transforms-3/9310665e8422554e378471a54c8b4f68/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/de2279805fd1769856255174ea323925/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/de2279805fd1769856255174ea323925/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/eunmikim/.gradle/caches/transforms-3/a91d0e13601b70491790d353890fd533/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44

@@ -5,11 +5,11 @@
     <data>
         <variable
             name="user"
-            type="com.programmers.githubapiMVC_00.ViewModel.Data.UsersData"/>
+            type="com.programmers.githubapimvvm.viewmodel.Data.UsersData"/>
 
         <variable
-            name="userimg"
-            type="com.programmers.githubapiMVC_00.View.BindingConversions"/>
+            name="imageUrl"
+            type="String" />
 
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,7 +23,7 @@
         android:id="@+id/users_item_img_photo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:imageUrl="@{userimg.loadImage(user.avatar_url)}"
+        app:profileImage="@{imageUrl}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

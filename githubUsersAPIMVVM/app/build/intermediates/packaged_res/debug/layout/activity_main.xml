@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+                                                       
+                                                   
+
+        
+                     
+                             
+                                                                        
+               
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.programmers.githubapiMVC_00.View.MainActivity">
+    android:layout_height="match_parent" android:tag="layout/activity_main_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
 
 
     <EditText
@@ -22,11 +28,11 @@
         android:layout_width="40dp"
         android:layout_height="0dp"
         android:layout_marginEnd="10dp"
+        android:tag="binding_1"                         
         android:src="@drawable/ic_search"
         app:layout_constraintBottom_toBottomOf="@+id/et_main"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/et_main"
-        android:contentDescription="TODO" />
+        app:layout_constraintTop_toTopOf="@+id/et_main" />
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -40,3 +46,4 @@
         tools:listitem="@layout/user_item"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+         

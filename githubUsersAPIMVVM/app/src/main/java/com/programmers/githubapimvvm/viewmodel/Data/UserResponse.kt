@@ -1,4 +1,4 @@
-package com.programmers.githubapiMVC_00.ViewModel.Data
+package com.programmers.githubapimvvm.viewmodel.Data
 
 data class UserResponse(
     val items : MutableList<UsersData>

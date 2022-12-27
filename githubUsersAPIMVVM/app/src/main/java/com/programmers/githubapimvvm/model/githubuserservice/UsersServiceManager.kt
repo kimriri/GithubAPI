@@ -1,4 +1,4 @@
-package com.programmers.githubapiMVC_00.Model.GithubService.UsersService
+package com.programmers.githubapimvvm.model.githubuserservice
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

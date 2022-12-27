@@ -37,8 +37,8 @@
 23-->/Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml:15:9-50
 24        <activity
 24-->/Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml:17:9-29:20
-25            android:name="com.programmers.githubapiMVC_00.View.MainActivity"
-25-->/Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml:18:13-77
+25            android:name="com.programmers.githubapimvvm.view.MainActivity"
+25-->/Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml:18:13-75
 26            android:exported="true" >
 26-->/Users/eunmikim/AndroidStudioProjects/MyApplication/GithubAPI/githubUsersAPIMVVM/app/src/main/AndroidManifest.xml:19:13-36
 27            <intent-filter>

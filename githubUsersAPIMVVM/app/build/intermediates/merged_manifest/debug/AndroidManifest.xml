@@ -22,7 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GitHubAPI_00" >
         <activity
-            android:name="com.programmers.githubapiMVC_00.View.MainActivity"
+            android:name="com.programmers.githubapimvvm.view.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

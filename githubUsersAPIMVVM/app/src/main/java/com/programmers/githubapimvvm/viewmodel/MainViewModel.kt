@@ -1,7 +1,7 @@
-package com.programmers.githubapiMVC_00.ViewModel
+package com.programmers.githubapimvvm.viewmodel
 
 import androidx.lifecycle.*
-import com.programmers.githubapiMVC_00.ViewModel.Data.UsersData
+import com.programmers.githubapimvvm.viewmodel.Data.UsersData
 import kotlinx.coroutines.launch
 
 

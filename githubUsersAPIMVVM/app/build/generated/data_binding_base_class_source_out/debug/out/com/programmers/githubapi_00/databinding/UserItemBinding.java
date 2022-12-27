@@ -2,6 +2,7 @@
 package com.programmers.githubapi_00.databinding;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -10,9 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
-import com.programmers.githubapiMVC_00.View;
-import com.programmers.githubapiMVC_00.ViewModel;
 import com.programmers.githubapi_00.R;
+import com.programmers.githubapimvvm.viewmodel.Data;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -27,12 +27,12 @@ public abstract class UserItemBinding extends ViewDataBinding {
   public final TextView usersItemTvName;
 
   @Bindable
-  protected ViewModel.Data.UsersData mUser;
+  protected Data.UsersData mUser;
 
   @Bindable
-  protected View.BindingConversions mUserimg;
+  protected String mImageUrl;
 
-  protected UserItemBinding(Object _bindingComponent, android.view.View _root, int _localFieldCount,
+  protected UserItemBinding(Object _bindingComponent, View _root, int _localFieldCount,
       ImageView usersItemImgPhoto, TextView usersItemTvLine, TextView usersItemTvName) {
     super(_bindingComponent, _root, _localFieldCount);
     this.usersItemImgPhoto = usersItemImgPhoto;
@@ -40,18 +40,18 @@ public abstract class UserItemBinding extends ViewDataBinding {
     this.usersItemTvName = usersItemTvName;
   }
 
-  public abstract void setUser(@Nullable ViewModel.Data.UsersData user);
+  public abstract void setUser(@Nullable Data.UsersData user);
 
   @Nullable
-  public ViewModel.Data.UsersData getUser() {
+  public Data.UsersData getUser() {
     return mUser;
   }
 
-  public abstract void setUserimg(@Nullable View.BindingConversions userimg);
+  public abstract void setImageUrl(@Nullable String imageUrl);
 
   @Nullable
-  public View.BindingConversions getUserimg() {
-    return mUserimg;
+  public String getImageUrl() {
+    return mImageUrl;
   }
 
   @NonNull
@@ -93,7 +93,7 @@ public abstract class UserItemBinding extends ViewDataBinding {
     return ViewDataBinding.<UserItemBinding>inflateInternal(inflater, R.layout.user_item, null, false, component);
   }
 
-  public static UserItemBinding bind(@NonNull android.view.View view) {
+  public static UserItemBinding bind(@NonNull View view) {
     return bind(view, DataBindingUtil.getDefaultComponent());
   }
 
@@ -105,7 +105,7 @@ public abstract class UserItemBinding extends ViewDataBinding {
    * @Deprecated Use DataBindingUtil.bind(view, component)
    */
   @Deprecated
-  public static UserItemBinding bind(@NonNull android.view.View view, @Nullable Object component) {
+  public static UserItemBinding bind(@NonNull View view, @Nullable Object component) {
     return (UserItemBinding)bind(component, view, R.layout.user_item);
   }
 }

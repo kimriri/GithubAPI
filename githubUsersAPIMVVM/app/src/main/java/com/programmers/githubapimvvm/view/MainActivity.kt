@@ -1,35 +1,38 @@
-package com.programmers.githubapiMVC_00.View
+package com.programmers.githubapimvvm.view
 
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.programmers.githubapiMVC_00.ViewModel.Data.UserResponse
-import com.programmers.githubapiMVC_00.ViewModel.Data.UsersData
-import com.programmers.githubapiMVC_00.Model.GithubService.UsersService.UsersServiceManager
-import com.programmers.githubapiMVC_00.ViewModel.MainViewModel
+import com.programmers.githubapi_00.R
+import com.programmers.githubapimvvm.viewmodel.Data.UserResponse
+import com.programmers.githubapimvvm.model.githubuserservice.UsersServiceManager
+import com.programmers.githubapimvvm.viewmodel.MainViewModel
 import com.programmers.githubapi_00.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Callback
 
 
 class MainActivity : AppCompatActivity() {
-    private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    private lateinit var binding: ActivityMainBinding // xml 파일명이 CamelCase 표기로 바뀌고 Binding이 붙습니다.
+
     private val model : MainViewModel by viewModels()
     lateinit var listAdapter: UsersAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.search = this
         listAdapter = UsersAdapter()
 
-
         binding.ivMainSearch.setOnClickListener {
-            resultSearch(binding.etMain.text.toString())
+            resultSearch()
+         binding.invalidateAll()
         }
+
         binding.rvMain.apply {
             adapter = listAdapter
             layoutManager = LinearLayoutManager(context)
@@ -38,8 +41,8 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun resultSearch(query: String) {
-        val call = UsersServiceManager.getRetrofitService.getUsers(query)
+    fun resultSearch() {
+        val call = UsersServiceManager.getRetrofitService.getUsers(binding.etMain.text.toString())
         call.enqueue(object : Callback<UserResponse> {
             override fun onResponse(
                 call: Call<UserResponse>,
