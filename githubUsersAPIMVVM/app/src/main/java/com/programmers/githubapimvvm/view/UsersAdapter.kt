@@ -24,11 +24,11 @@ class UsersAdapter: RecyclerView.Adapter<UsersAdapter.MyView>() {
     private var userList = mutableListOf<UsersData>()
     inner class MyView(private var binding: UserItemBinding ): RecyclerView.ViewHolder(binding.root) {
         fun bind(currentUser: UsersData) {
+            binding.apply {
+                binding.profile.setProfileUrl(binding.usersItemImgPhoto,currentUser.avatar_url)
+                binding.user = currentUser
 
-                bindingAdapter.apply {
-                    binding.user = currentUser
-
-                }
+            }
 
 
 //            binding.apply {

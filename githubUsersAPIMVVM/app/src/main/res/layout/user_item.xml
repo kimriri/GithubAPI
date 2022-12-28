@@ -8,8 +8,9 @@
             type="com.programmers.githubapimvvm.viewmodel.Data.UsersData"/>
 
         <variable
-            name="imageUrl"
-            type="String" />
+            name="profile"
+            type="com.programmers.githubapimvvm.viewmodel.ImageViewBind"/>
+
 
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,7 +24,7 @@
         android:id="@+id/users_item_img_photo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:profileImage="@{imageUrl}"
+        app:profileImage="@{user.avatar_url}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

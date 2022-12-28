@@ -13,13 +13,3 @@ data class UsersData(
        @SerializedName("avatar_url")
        val avatar_url : String
 )
-object ImageViewBind {
-       @androidx.databinding.BindingAdapter("profileImage")
-       @JvmStatic
-       fun setProfileUrl(view: ImageView, imageUrl: String?) {
-              Glide.with(view.context)
-                     .load(imageUrl)
-                     .apply(RequestOptions.circleCropTransform())
-                     .into(view)
-       }
-}

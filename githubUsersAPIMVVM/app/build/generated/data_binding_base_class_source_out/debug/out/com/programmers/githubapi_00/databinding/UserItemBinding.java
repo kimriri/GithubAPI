@@ -13,6 +13,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.programmers.githubapi_00.R;
 import com.programmers.githubapimvvm.viewmodel.Data;
+import com.programmers.githubapimvvm.viewmodel.ImageViewBind;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -30,7 +31,7 @@ public abstract class UserItemBinding extends ViewDataBinding {
   protected Data.UsersData mUser;
 
   @Bindable
-  protected String mImageUrl;
+  protected ImageViewBind mProfile;
 
   protected UserItemBinding(Object _bindingComponent, View _root, int _localFieldCount,
       ImageView usersItemImgPhoto, TextView usersItemTvLine, TextView usersItemTvName) {
@@ -47,11 +48,11 @@ public abstract class UserItemBinding extends ViewDataBinding {
     return mUser;
   }
 
-  public abstract void setImageUrl(@Nullable String imageUrl);
+  public abstract void setProfile(@Nullable ImageViewBind profile);
 
   @Nullable
-  public String getImageUrl() {
-    return mImageUrl;
+  public ImageViewBind getProfile() {
+    return mProfile;
   }
 
   @NonNull

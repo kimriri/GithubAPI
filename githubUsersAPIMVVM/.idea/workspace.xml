@@ -12,8 +12,21 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb2fdd1f-c2ff-43a6-bd8c-a81b77277d68" name="Changes" comment="databinding ... ing22">
+    <list default="true" id="cb2fdd1f-c2ff-43a6-bd8c-a81b77277d68" name="Changes" comment="new branch">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/programmers/githubapimvvm/viewmodel/ImageViewBind.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/data_binding_base_class_source_out/debug/out/com/programmers/githubapi_00/databinding/UserItemBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/data_binding_base_class_source_out/debug/out/com/programmers/githubapi_00/databinding/UserItemBinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/signing_config_versions/debug/signing-config-versions.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/signing_config_versions/debug/signing-config-versions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/programmers/githubapimvvm/view/UsersAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/programmers/githubapimvvm/view/UsersAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/programmers/githubapimvvm/viewmodel/Data/UsersData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/programmers/githubapimvvm/viewmodel/Data/UsersData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/programmers/githubapimvvm/viewmodel/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/programmers/githubapimvvm/viewmodel/MainViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/user_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/user_item.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672135103326</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="new branch">
+      <created>1672189887661</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1672189887661</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,7 +239,8 @@
     <MESSAGE value="databinding test" />
     <MESSAGE value="databinding ... ing" />
     <MESSAGE value="databinding ... ing22" />
-    <option name="LAST_COMMIT_MESSAGE" value="databinding ... ing22" />
+    <MESSAGE value="new branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="new branch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
