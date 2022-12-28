@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.programmers.githubapi_00.R
-import com.programmers.githubapimvvm.viewmodel.Data.UserResponse
-import com.programmers.githubapimvvm.model.githubuserservice.UsersServiceManager
+import com.programmers.githubapimvvm.viewmodel.data.userresponse
+import com.programmers.githubapimvvm.model.githubuserservice.usersservicemanager
 import com.programmers.githubapimvvm.viewmodel.MainViewModel
 import com.programmers.githubapi_00.databinding.ActivityMainBinding
 import retrofit2.Call
@@ -16,17 +16,17 @@ import retrofit2.Callback
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding // xml 파일명이 CamelCase 표기로 바뀌고 Binding이 붙습니다.
+    private lateinit var binding: ActivityMainBinding
 
     private val model : MainViewModel by viewModels()
-    lateinit var listAdapter: UsersAdapter
+    lateinit var listAdapter: usersadapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.search = this
-        listAdapter = UsersAdapter()
+        listAdapter = usersadapter()
 
         binding.ivMainSearch.setOnClickListener {
             resultSearch()
@@ -42,11 +42,11 @@ class MainActivity : AppCompatActivity() {
 
 
     fun resultSearch() {
-        val call = UsersServiceManager.getRetrofitService.getUsers(binding.etMain.text.toString())
-        call.enqueue(object : Callback<UserResponse> {
+        val call = usersservicemanager.getRetrofitService.getUsers(binding.etMain.text.toString())
+        call.enqueue(object : Callback<userresponse> {
             override fun onResponse(
-                call: Call<UserResponse>,
-                response: retrofit2.Response<UserResponse>
+                call: Call<userresponse>,
+                response: retrofit2.Response<userresponse>
             ) {
                 if (response.isSuccessful) {
                     if (response.body()?.items != null) {
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+            override fun onFailure(call: Call<userresponse>, t: Throwable) {
                 Log.d("TAG", ": onFailure ${t.message}")
             }
         })

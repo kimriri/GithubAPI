@@ -1,14 +1,13 @@
 package com.programmers.githubapimvvm.model.githubuserservice
 
-import com.programmers.githubapimvvm.viewmodel.Data.UserResponse
+import com.programmers.githubapimvvm.viewmodel.data.userresponse
 import retrofit2.http.GET
-import retrofit2.http.Headers
 import retrofit2.http.Query
 
 
-interface UsersInterface {
+interface usersinterface {
     @GET("search/users")
     fun getUsers(@Query("q") query: String)
-    :  retrofit2.Call<UserResponse>
+    :  retrofit2.Call<userresponse>
 
 }

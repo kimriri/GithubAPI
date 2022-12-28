@@ -4,7 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-object UsersServiceManager {
+object usersservicemanager {
     private const val BASE_URL = "https://api.github.com"
 
     private val getRetrofit by lazy{
@@ -14,5 +14,5 @@ object UsersServiceManager {
             .build()
     }
 
-    val getRetrofitService : UsersInterface =  getRetrofit.create(UsersInterface::class.java)
+    val getRetrofitService : usersinterface =  getRetrofit.create(usersinterface::class.java)
 }
