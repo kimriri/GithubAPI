@@ -3,14 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="androidx.core.content.ContextCompat"/>
         <variable
-            name="usersdata"
-            type="com.programmers.githubapimvvm.viewmodel.data.usersdata"/>
+            name="users"
+            type="com.programmers.githubapimvvm.data.UsersData"/>
 
         <variable
-            name="profile"
-            type="com.programmers.githubapimvvm.viewmodel.ImageViewBind"/>
+            name="imgview"
+            type="com.programmers.githubapimvvm.data.viewmodel.ImageViewBind"/>
 
 
     </data>
@@ -26,7 +25,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@color/black"
-        profileImage="@{usersdata.avatar_url}"
+        profileImage="@{users.login}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/name"
-        android:text="@{usersdata.login}"
+        android:text="@{users.login}"
         android:textColor="@color/black"
         android:layout_marginStart="22dp"
         android:textSize="24sp"

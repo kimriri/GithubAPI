@@ -1,10 +1,10 @@
-package com.programmers.githubapimvvm.model.githubuserservice
+package com.programmers.githubapimvvm.model
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-object usersservicemanager {
+object UsersServiceManager {
     private const val BASE_URL = "https://api.github.com"
 
     private val getRetrofit by lazy{
@@ -14,5 +14,5 @@ object usersservicemanager {
             .build()
     }
 
-    val getRetrofitService : usersinterface =  getRetrofit.create(usersinterface::class.java)
+    val getRetrofitService : UsersInterface =  getRetrofit.create(UsersInterface::class.java)
 }

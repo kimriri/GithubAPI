@@ -1,29 +1,20 @@
 package com.programmers.githubapimvvm.view
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
-import com.programmers.githubapi_00.databinding.UserItemBinding
-import com.programmers.githubapimvvm.viewmodel.data.usersdata
+import com.programmers.githubapimvvm.data.UsersData
+import com.programmers.githubapimvvm.databinding.UserItemBinding
 
 
-class usersadapter: RecyclerView.Adapter<usersadapter.myview>() {
-    private var userList = mutableListOf<com.programmers.githubapimvvm.viewmodel.data.usersdata>()
-    inner class myview(private var binding: UserItemBinding ): RecyclerView.ViewHolder(binding.root) {
-        fun bind(currentUser: com.programmers.githubapimvvm.viewmodel.data.usersdata?) {
-            binding.apply {
-                Log.e("ASDFASDF",currentUser.toString());
-                binding.usersdata = currentUser?.copy(
-                    login = usersdata.login,
-                    avatar_url = usersdata.avatar_url
-                )
-               // binding.profile.setProfileUrl(binding.usersItemImgPhoto,currentUser.avatar_url)
-
-            }
-
-
+class UsersAdapter: RecyclerView.Adapter<UsersAdapter.MyView>() {
+    private var userList = mutableListOf<UsersData>()
+    private lateinit var login : String
+    private lateinit var avatar_url : String
+    inner class MyView(private val binding: UserItemBinding): RecyclerView.ViewHolder(binding.root) {
+        fun bind(currentUser: UsersData) {
+            this.binding.users = currentUser
 //            binding.apply {
 //                Glide.with(itemView)
 //                    .load(user.avatar_url)
@@ -33,13 +24,17 @@ class usersadapter: RecyclerView.Adapter<usersadapter.myview>() {
 //                usersItemTvName.text = user.login
 //            }
         }
+
+
+
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myview {
-         val binding = UserItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return myview(binding)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : MyView {
+        val binding = UserItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+         //val binding = UserItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return MyView(binding)
     }
 
-    override fun onBindViewHolder(holder: myview, position: Int) {
+    override fun onBindViewHolder(holder: MyView, position: Int) {
         holder.bind(userList[position])
     }
 
@@ -47,8 +42,8 @@ class usersadapter: RecyclerView.Adapter<usersadapter.myview>() {
         return userList.size
     }
 
-    fun setList(userlist: MutableLiveData<MutableList<usersdata>?>) {
-        userList = userlist.value!!
+    fun setList(list: MutableLiveData<MutableList<UsersData>?>) {
+        userList = list.value!!
         notifyDataSetChanged()
     }
 }

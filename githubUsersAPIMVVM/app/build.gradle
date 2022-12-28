@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.programmers.githubapi_00'
+    namespace 'com.programmers.githubapimvvm'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.programmers.githubapi_00"
+        applicationId "com.programmers.githubapimvvm"
         minSdk 21
         targetSdk 33
         versionCode 1

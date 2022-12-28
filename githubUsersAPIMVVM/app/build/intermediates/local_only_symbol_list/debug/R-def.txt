@@ -22,6 +22,6 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
 string name
-style Theme.GitHubAPI_00
+style Theme.githubapimvvm
 xml backup_rules
 xml data_extraction_rules

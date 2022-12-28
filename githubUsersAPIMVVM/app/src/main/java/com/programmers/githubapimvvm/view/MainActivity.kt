@@ -6,11 +6,11 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.programmers.githubapi_00.R
-import com.programmers.githubapimvvm.viewmodel.data.userresponse
-import com.programmers.githubapimvvm.model.githubuserservice.usersservicemanager
-import com.programmers.githubapimvvm.viewmodel.MainViewModel
-import com.programmers.githubapi_00.databinding.ActivityMainBinding
+import com.programmers.githubapimvvm.data.UserResponse
+import com.programmers.githubapimvvm.model.UsersServiceManager
+import com.programmers.githubapimvvm.R
+import com.programmers.githubapimvvm.data.viewmodel.MainViewModel
+import com.programmers.githubapimvvm.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Callback
 
@@ -19,14 +19,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     private val model : MainViewModel by viewModels()
-    lateinit var listAdapter: usersadapter
+    private val listAdapter: UsersAdapter = UsersAdapter()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.search = this
-        listAdapter = usersadapter()
 
         binding.ivMainSearch.setOnClickListener {
             resultSearch()
@@ -42,21 +41,21 @@ class MainActivity : AppCompatActivity() {
 
 
     fun resultSearch() {
-        val call = usersservicemanager.getRetrofitService.getUsers(binding.etMain.text.toString())
-        call.enqueue(object : Callback<userresponse> {
+        val call = UsersServiceManager.getRetrofitService.getUsers(binding.etMain.text.toString())
+        call.enqueue(object : Callback<UserResponse> {
             override fun onResponse(
-                call: Call<userresponse>,
-                response: retrofit2.Response<userresponse>
+                call: Call<UserResponse>,
+                response: retrofit2.Response<UserResponse>
             ) {
                 if (response.isSuccessful) {
                     if (response.body()?.items != null) {
                         model.loadData(response.body()?.items!!)
-                        listAdapter.setList(model._liveData)
+                        listAdapter.setList(model.liveData)
 
                     }
                 }
             }
-            override fun onFailure(call: Call<userresponse>, t: Throwable) {
+            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
                 Log.d("TAG", ": onFailure ${t.message}")
             }
         })
