@@ -1,7 +1,7 @@
-package com.programmers.githubapimvvm.viewmodel.data
+package com.programmers.githubapimvvm.data
 
 
-data class usersdata(
+data class UsersData(
      //  @SerializedName("login")
        val login : String,
       // @SerializedName("avatar_url")

@@ -1,9 +1,9 @@
-package com.programmers.githubapimvvm.viewmodel
+package com.programmers.githubapimvvm.data.viewmodel
 
 import android.widget.ImageView
+import coil.load
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.programmers.githubapi_00.R
 import retrofit2.http.Url
 
 object ImageViewBind {
