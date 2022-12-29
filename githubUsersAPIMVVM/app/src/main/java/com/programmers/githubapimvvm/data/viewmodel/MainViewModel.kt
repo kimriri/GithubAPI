@@ -8,11 +8,11 @@ import kotlinx.coroutines.launch
 
 class MainViewModel: ViewModel() {
 
-    val liveData = MutableLiveData<MutableList<UsersData>?>()
+    val _liveData = MutableLiveData<MutableList<UsersData>?>()
 
     fun loadData(userList: MutableList<UsersData>) = viewModelScope.launch {
-        liveData.value = userList
-        liveData.postValue(userList)
+        _liveData.value = userList
+        _liveData.postValue(userList)
     }
 
 }
