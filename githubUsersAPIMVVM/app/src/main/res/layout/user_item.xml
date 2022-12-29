@@ -7,11 +7,6 @@
             name="users"
             type="com.programmers.githubapimvvm.data.UsersData"/>
 
-        <variable
-            name="imgview"
-            type="com.programmers.githubapimvvm.data.viewmodel.ImageViewBind"/>
-
-
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,7 +20,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@color/black"
-        profileImage="@{users.login}"
+        app:profileImage="@{users.avatar_url}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

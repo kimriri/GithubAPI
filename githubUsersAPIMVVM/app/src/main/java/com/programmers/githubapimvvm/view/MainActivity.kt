@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
     private val model : MainViewModel by viewModels()
     private val listAdapter: UsersAdapter = UsersAdapter()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -50,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     if (response.body()?.items != null) {
                         model.loadData(response.body()?.items!!)
-                        listAdapter.setList(model.liveData)
+                        listAdapter.setList(model._liveData)
 
                     }
                 }

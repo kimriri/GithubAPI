@@ -10,27 +10,13 @@ import com.programmers.githubapimvvm.databinding.UserItemBinding
 
 class UsersAdapter: RecyclerView.Adapter<UsersAdapter.MyView>() {
     private var userList = mutableListOf<UsersData>()
-    private lateinit var login : String
-    private lateinit var avatar_url : String
     inner class MyView(private val binding: UserItemBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(currentUser: UsersData) {
             this.binding.users = currentUser
-//            binding.apply {
-//                Glide.with(itemView)
-//                    .load(user.avatar_url)
-//                    .transition(DrawableTransitionOptions.withCrossFade())
-//                    .centerCrop()
-//                    .into(usersItemImgPhoto)
-//                usersItemTvName.text = user.login
-//            }
         }
-
-
-
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : MyView {
-        val binding = UserItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-         //val binding = UserItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+         val binding = UserItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MyView(binding)
     }
 
