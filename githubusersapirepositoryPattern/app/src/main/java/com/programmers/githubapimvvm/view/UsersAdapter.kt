@@ -9,6 +9,7 @@ import com.programmers.githubapimvvm.data.viewmodel.MainViewModel
 import com.programmers.githubapimvvm.databinding.UserItemBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import okhttp3.internal.notifyAll
 
 
 class UsersAdapter: RecyclerView.Adapter<UsersAdapter.MyView>() {

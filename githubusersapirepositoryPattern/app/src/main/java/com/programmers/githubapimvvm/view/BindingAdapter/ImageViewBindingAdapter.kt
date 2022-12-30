@@ -10,6 +10,6 @@ import com.bumptech.glide.request.RequestOptions
     fun ImageView.profileImage(imageUrl: String) {
         Glide.with(this)
             .load(imageUrl)
-            .apply(RequestOptions.circleCropTransform())
+            .apply(RequestOptions.centerCropTransform())
             .into(this)
 }

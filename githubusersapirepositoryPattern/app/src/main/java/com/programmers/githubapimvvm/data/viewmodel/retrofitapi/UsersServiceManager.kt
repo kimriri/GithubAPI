@@ -1,4 +1,4 @@
-package com.programmers.githubapimvvm.model
+package com.programmers.githubapimvvm.data.viewmodel.retrofitapi
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -13,6 +13,5 @@ object UsersServiceManager {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-
     val getRetrofitService : UsersInterface =  getRetrofit.create(UsersInterface::class.java)
 }
