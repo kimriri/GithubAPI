@@ -7,20 +7,20 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.programmers.githubapimvvm.R
-import com.programmers.githubapimvvm.data.repository.UserResponse
 import com.programmers.githubapimvvm.data.viewmodel.MainViewModel
 import com.programmers.githubapimvvm.databinding.ActivityMainBinding
-import com.programmers.githubapimvvm.model.UsersServiceManager
-import retrofit2.Call
-import retrofit2.Callback
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity()  {
+
+
     private lateinit var binding: ActivityMainBinding
-
-    private val model : MainViewModel by viewModels()
+    private val viewmodel : MainViewModel by viewModels()
     private val listAdapter: UsersAdapter = UsersAdapter()
-
+    val TAG by lazy {  this.componentName.className}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -31,28 +31,17 @@ class MainActivity : AppCompatActivity()  {
             setHasFixedSize(true)
         }
     }
-
     fun searchEvent() {
-        model.saveSearch(binding.etMain.text.toString())
-        model.resultSearch()
-            val call = UsersServiceManager.getRetrofitService.getUsers(model._liveSearch)
-            call.enqueue(object : Callback<UserResponse> {
-                override fun onResponse(
-                    call: Call<UserResponse>,
-                    response: retrofit2.Response<UserResponse>
-                ) {
-                    if (response.isSuccessful) {
-                        if (response.body()?.items != null) {
-                            model.saveData(response.body()?.items!!)
-                            listAdapter.setList(model._liveData)
-                        }
-                    }
-                }
-                override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                    Log.d("TAG", ": onFailure ${t.message}")
-                }
-            })
-
-
+         viewmodel.saveSearch(binding.etMain.text.toString())
+         CoroutineScope(Dispatchers.Main).launch {
+             val rqUserList = viewmodel.resultSearch()
+             if(rqUserList.isSuccessful) {
+                 Log.d(TAG,rqUserList.code().toString())
+                 viewmodel.saveData(rqUserList.body()?.items!!)
+                 listAdapter.setList(viewmodel._liveData)
+             }else {
+                 Log.e(TAG,rqUserList.message())
+             }
+         }
     }
 }

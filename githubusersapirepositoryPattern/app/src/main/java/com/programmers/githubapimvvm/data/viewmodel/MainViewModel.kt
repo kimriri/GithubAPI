@@ -3,20 +3,15 @@ package com.programmers.githubapimvvm.data.viewmodel
 import androidx.lifecycle.*
 import com.programmers.githubapimvvm.data.repository.UserResponse
 import com.programmers.githubapimvvm.data.repository.UsersData
-import com.programmers.githubapimvvm.model.UsersServiceManager
-import com.programmers.githubapimvvm.view.UsersAdapter
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.flow
+import com.programmers.githubapimvvm.data.viewmodel.retrofitapi.UsersServiceManager
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import kotlin.coroutines.CoroutineContext
+import retrofit2.Response
 
 
 class MainViewModel: ViewModel() {
 
     val _liveData = MutableLiveData<MutableList<UsersData>?>()
-    var _liveSearch : String = "11"
+    lateinit var _liveSearch : String
 
     fun saveData(userList: MutableList<UsersData>) = viewModelScope.launch{
         _liveData.value = userList
@@ -27,7 +22,7 @@ class MainViewModel: ViewModel() {
         _liveSearch = liveSearch
     }
 
-    fun resultSearch(): Call<UserResponse> {
+    suspend fun resultSearch(): Response<UserResponse> {
        return UsersServiceManager.getRetrofitService.getUsers(_liveSearch)
 
     }
