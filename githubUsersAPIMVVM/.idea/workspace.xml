@@ -13,7 +13,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb2fdd1f-c2ff-43a6-bd8c-a81b77277d68" name="Changes" comment="binding">
-      <change afterPath="$PROJECT_DIR$/../openGL/app/src/main/java/com/programmers/githubapimvvm/MyRenderer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../githubusersapirepositoryPattern/app/src/main/java/com/programmers/githubapimvvm/view/UsersAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../githubusersapirepositoryPattern/app/src/main/java/com/programmers/githubapimvvm/view/UsersAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../githubusersapirepositoryPattern/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../githubusersapirepositoryPattern/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
