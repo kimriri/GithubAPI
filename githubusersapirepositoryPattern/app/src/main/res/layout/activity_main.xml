@@ -7,6 +7,10 @@
             <variable
                 name="search"
                 type="com.programmers.githubapimvvm.view.MainActivity"/>
+
+            <variable
+                name="mainviewmodel"
+                type="com.programmers.githubapimvvm.data.viewmodel.MainViewModel" />
         </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -43,6 +47,8 @@
         app:layout_constraintTop_toBottomOf="@+id/et_main"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:orientation="vertical"
         tools:listitem="@layout/user_item"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
