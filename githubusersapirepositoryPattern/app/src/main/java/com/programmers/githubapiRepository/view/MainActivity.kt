@@ -1,17 +1,14 @@
-package com.programmers.githubapimvvm.view
+package com.programmers.githubapiRepository.view
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import com.programmers.githubapimvvm.R
-import com.programmers.githubapimvvm.viewmodel.MainViewModel
-import com.programmers.githubapimvvm.databinding.ActivityMainBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import com.programmers.githubapiRepository.R
+import com.programmers.githubapiRepository.databinding.ActivityMainBinding
+import com.programmers.githubapiRepository.viewmodel.MainViewModel
+
 
 
 class MainActivity : AppCompatActivity()  {

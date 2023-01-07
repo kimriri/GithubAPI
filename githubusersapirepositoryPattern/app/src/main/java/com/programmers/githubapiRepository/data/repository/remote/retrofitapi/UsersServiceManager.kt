@@ -1,4 +1,4 @@
-package com.programmers.githubapimvvm.data.repository.remote.retrofitapi
+package com.programmers.githubapiRepository.data.repository.remote.retrofitapi
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

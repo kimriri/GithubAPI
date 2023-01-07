@@ -1,11 +1,11 @@
-package com.programmers.githubapimvvm.viewmodel
+package com.programmers.githubapiRepository.viewmodel
 
 import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.*
-import com.programmers.githubapimvvm.data.UserResponse
-import com.programmers.githubapimvvm.data.UsersData
-import com.programmers.githubapimvvm.data.repository.remote.UserListRepository
+import com.programmers.githubapiRepository.data.UserResponse
+import com.programmers.githubapiRepository.data.UsersData
+import com.programmers.githubapiRepository.data.repository.remote.UserListRepository
 import kotlinx.coroutines.launch
 import retrofit2.Response
 

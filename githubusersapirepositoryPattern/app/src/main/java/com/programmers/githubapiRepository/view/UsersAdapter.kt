@@ -1,11 +1,10 @@
-package com.programmers.githubapimvvm.view
+package com.programmers.githubapiRepository.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.programmers.githubapimvvm.data.UsersData
-import com.programmers.githubapimvvm.databinding.UserItemBinding
-
+import com.programmers.githubapiRepository.data.UsersData
+import com.programmers.githubapiRepository.databinding.UserItemBinding
 
 
 class UsersAdapter(private val context: List<Any>) : RecyclerView.Adapter<UsersAdapter.MyView>() {
