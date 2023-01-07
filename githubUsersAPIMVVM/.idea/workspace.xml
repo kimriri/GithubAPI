@@ -12,16 +12,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb2fdd1f-c2ff-43a6-bd8c-a81b77277d68" name="Changes" comment="binding">
-      <change beforePath="$PROJECT_DIR$/../githubusersapirepositoryPattern/app/src/main/java/com/programmers/githubapimvvm/view/UsersAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../githubusersapirepositoryPattern/app/src/main/java/com/programmers/githubapimvvm/view/UsersAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../githubusersapirepositoryPattern/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../githubusersapirepositoryPattern/build.gradle" afterDir="false" />
-    </list>
+    <list default="true" id="cb2fdd1f-c2ff-43a6-bd8c-a81b77277d68" name="Changes" comment="binding" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R3CM302C73E]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/eunmikim/.android/avd/Nexus_6_API_31.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -77,6 +74,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2JFUVW1bTKVcWWZCv97qNzyV7dp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

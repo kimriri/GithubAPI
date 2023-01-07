@@ -5,7 +5,7 @@
     <data>
         <variable
             name="users"
-            type="com.programmers.githubapimvvm.data.repository.UsersData"/>
+            type="com.programmers.githubapimvvm.data.UsersData"/>
 
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
