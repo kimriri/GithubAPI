@@ -6,11 +6,11 @@
         <data>
             <variable
                 name="search"
-                type="com.programmers.githubapimvvm.view.MainActivity"/>
+                type="com.programmers.githubapiRepository.view.MainActivity"/>
 
             <variable
                 name="mainviewmodel"
-                type="com.programmers.githubapimvvm.viewmodel.MainViewModel" />
+                type="com.programmers.githubapiRepository.viewmodel.MainViewModel" />
         </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"

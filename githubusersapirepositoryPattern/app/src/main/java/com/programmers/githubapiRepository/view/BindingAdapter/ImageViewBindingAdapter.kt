@@ -1,4 +1,4 @@
-package com.programmers.githubapimvvm.data.viewmodel
+package com.programmers.githubapiRepository.data.viewmodel
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter

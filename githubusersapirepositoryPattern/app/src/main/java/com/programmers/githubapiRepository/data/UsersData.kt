@@ -1,4 +1,4 @@
-package com.programmers.githubapimvvm.data
+package com.programmers.githubapiRepository.data
 
 
 data class UsersData(
