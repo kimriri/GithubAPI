@@ -9,7 +9,8 @@ import androidx.lifecycle.Observer
 import com.programmers.githubapiRepository.R
 import com.programmers.githubapiRepository.databinding.ActivityMainBinding
 import com.programmers.githubapiRepository.viewmodel.MainViewModel
-
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 
 
 class MainActivity : AppCompatActivity()  {
@@ -33,6 +34,8 @@ class MainActivity : AppCompatActivity()  {
         }else {
             Toast.makeText(this,"NO User List ",Toast.LENGTH_SHORT).show()
         }
+
+        CoroutineScope(Dispatchers.)
 
 
 
