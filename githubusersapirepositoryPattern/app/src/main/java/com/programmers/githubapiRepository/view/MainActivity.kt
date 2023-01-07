@@ -1,6 +1,7 @@
 package com.programmers.githubapiRepository.view
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -24,10 +25,16 @@ class MainActivity : AppCompatActivity()  {
     }
     fun searchEvent() {
          viewmodel.saveSearch(binding.etMain.text.toString())
-         viewmodel._liveData.observe(this, Observer {
+        val rqData = viewmodel._rquserList
+        if(rqData == "Successful") {
+            viewmodel._liveData.observe(this, Observer {
             (binding.rvMain.adapter as UsersAdapter).update(it!!)
-
         })
+        }else {
+            Toast.makeText(this,"NO User List ",Toast.LENGTH_SHORT).show()
+        }
+
+
 
 
 
