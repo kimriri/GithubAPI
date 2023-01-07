@@ -1,13 +1,11 @@
-package com.programmers.githubapimvvm.data.viewmodel
+package com.programmers.githubapimvvm.viewmodel
 
 import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.*
-import com.programmers.githubapimvvm.data.repository.UserResponse
-import com.programmers.githubapimvvm.data.repository.UsersData
-import com.programmers.githubapimvvm.data.viewmodel.retrofitapi.UsersServiceManager
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
+import com.programmers.githubapimvvm.data.UserResponse
+import com.programmers.githubapimvvm.data.UsersData
+import com.programmers.githubapimvvm.data.repository.remote.UserListRepository
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
@@ -32,8 +30,8 @@ class MainViewModel: ViewModel() {
             }
     }
 
-    suspend fun resultSearch(): Response<UserResponse> {
-       return UsersServiceManager.getRetrofitService.getUsers(_liveSearch)
+     private suspend fun resultSearch(): Response<UserResponse> {
+       return UserListRepository().getUser(_liveSearch)
 
     }
 

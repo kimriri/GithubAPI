@@ -1,10 +1,9 @@
 package com.programmers.githubapimvvm.view
 
-import android.renderscript.ScriptGroup.Binding
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.programmers.githubapimvvm.data.repository.UsersData
+import com.programmers.githubapimvvm.data.UsersData
 import com.programmers.githubapimvvm.databinding.UserItemBinding
 
 

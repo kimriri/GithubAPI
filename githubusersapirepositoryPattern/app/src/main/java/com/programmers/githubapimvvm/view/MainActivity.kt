@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.programmers.githubapimvvm.R
-import com.programmers.githubapimvvm.data.viewmodel.MainViewModel
+import com.programmers.githubapimvvm.viewmodel.MainViewModel
 import com.programmers.githubapimvvm.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity()  {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.search = this
-
         binding.rvMain.adapter = UsersAdapter(emptyList())
     }
     fun searchEvent() {
