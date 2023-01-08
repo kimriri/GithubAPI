@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="365cbd02-9eec-44bc-90b0-e9ecd0ae4410" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AndroidStudy/AAC View Model" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/githubusersapirepositoryPattern/app/src/main/java/com/programmers/githubapiRepository/viewmodel/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/githubusersapirepositoryPattern/app/src/main/java/com/programmers/githubapiRepository/viewmodel/MainViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

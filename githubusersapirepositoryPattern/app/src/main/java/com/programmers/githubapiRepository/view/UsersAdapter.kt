@@ -1,21 +1,26 @@
 package com.programmers.githubapiRepository.view
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.programmers.githubapiRepository.data.UsersData
 import com.programmers.githubapiRepository.databinding.UserItemBinding
 
 
-class UsersAdapter(private val context: List<Any>) : RecyclerView.Adapter<UsersAdapter.MyView>() {
-     var userList = mutableListOf<UsersData>()
 
+class UsersAdapter(private val context: Context) : RecyclerView.Adapter<UsersAdapter.MyView>() {
+      var userList = mutableListOf<UsersData>()
     private lateinit var binding: UserItemBinding
 
     inner class MyView(binding: UserItemBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(currentUser: UsersData) {
             binding.apply {
                 binding.users = currentUser
+
             }
         }
     }
@@ -26,8 +31,9 @@ class UsersAdapter(private val context: List<Any>) : RecyclerView.Adapter<UsersA
 
 
     override fun onBindViewHolder(holder: MyView, position: Int) {
-        holder.bind(userList[position])
-         binding.executePendingBindings()
+        holder.bind(userList[position] )
+        binding.executePendingBindings()
+
     }
 
     override fun getItemCount(): Int {
@@ -37,6 +43,7 @@ class UsersAdapter(private val context: List<Any>) : RecyclerView.Adapter<UsersA
     fun update(list: MutableList<UsersData>) {
         userList = list
         notifyDataSetChanged()
+
 
     }
 }
