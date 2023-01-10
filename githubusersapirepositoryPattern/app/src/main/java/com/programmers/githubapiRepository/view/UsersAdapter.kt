@@ -3,9 +3,6 @@ package com.programmers.githubapiRepository.view
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.activity.viewModels
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.programmers.githubapiRepository.data.UsersData
 import com.programmers.githubapiRepository.databinding.UserItemBinding

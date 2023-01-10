@@ -2,8 +2,8 @@ package com.programmers.githubapiRepository.viewmodel
 
 import androidx.lifecycle.*
 import com.programmers.githubapiRepository.data.UsersData
-import com.programmers.githubapiRepository.data.repository.remote.retrofitapi.UserInterfaceFlowImpl
-import com.programmers.githubapiRepository.data.repository.remote.retrofitapi.UsersServiceManager
+import com.programmers.githubapiRepository.data.repository.UserInterfaceFlowImpl
+import com.programmers.githubapiRepository.data.repository.remote.UsersServiceManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flowOn
@@ -32,6 +32,4 @@ class MainViewModel : ViewModel() {
                 }
         }
     }
-
-
 }

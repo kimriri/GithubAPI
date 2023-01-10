@@ -1,4 +1,4 @@
-package com.programmers.githubapiRepository.data.repository.remote.retrofitapi
+package com.programmers.githubapiRepository.data.repository.remote
 
 import com.programmers.githubapiRepository.data.UserResponse
 import retrofit2.Response
