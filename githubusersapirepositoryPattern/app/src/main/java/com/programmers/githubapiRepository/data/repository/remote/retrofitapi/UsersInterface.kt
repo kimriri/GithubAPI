@@ -11,3 +11,4 @@ import retrofit2.http.Query
     suspend fun getUsers(@Query("q") query: String)
     : Response<UserResponse>
 }
+

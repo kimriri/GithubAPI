@@ -1,13 +1,13 @@
 package com.programmers.githubapiRepository.viewmodel
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import androidx.lifecycle.*
-import com.programmers.githubapiRepository.data.UserResponse
 import com.programmers.githubapiRepository.data.UsersData
-import com.programmers.githubapiRepository.data.repository.remote.UserListRepository
+import com.programmers.githubapiRepository.data.repository.remote.retrofitapi.UserInterfaceFlowImpl
+import com.programmers.githubapiRepository.data.repository.remote.retrofitapi.UsersServiceManager
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
-import retrofit2.Response
 
 
 class MainViewModel : ViewModel() {
@@ -15,22 +15,23 @@ class MainViewModel : ViewModel() {
     val liveData = MutableLiveData<MutableList<UsersData>?>()
     private lateinit var _liveSearch: String
      var rquserlist: MutableLiveData<String> = MutableLiveData<String>()
+    val apiHelper = UserInterfaceFlowImpl(UsersServiceManager.getRetrofitService)
 
-    fun saveSearch(livesearch: String) = viewModelScope.launch {
-        _liveSearch = livesearch
-        val rqUserList = resultSearch()
-        if (rqUserList.isSuccessful && rqUserList.body()?.items?.size != 0) {
-            liveData.value = rqUserList.body()?.items!!
-            rquserlist.value ="Successful"
-        } else {
-            rquserlist.value =rqUserList.message()
-            Log.e(TAG, rqUserList.message())
+     fun fetchUsers(liveSearch: String) {
+         _liveSearch = liveSearch
+        viewModelScope.launch {
+            apiHelper.getUsers(liveSearch)
+                .flowOn(Dispatchers.IO)
+                .catch { e ->
+                    rquserlist.value =e.message.toString()
+                }
+                .collect {
+                    liveData.value = it.body()?.items
+                    rquserlist.value ="Successful"
+
+                }
         }
     }
 
-    private suspend fun resultSearch(): Response<UserResponse> {
-        return UserListRepository().getUser(_liveSearch)
-
-    }
 
 }

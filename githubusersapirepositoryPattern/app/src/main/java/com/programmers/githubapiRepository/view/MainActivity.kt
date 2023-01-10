@@ -24,13 +24,17 @@ class MainActivity : AppCompatActivity() {
         binding.rvMain.adapter = UsersAdapter(context = this)
     }
     fun searchEvent() {
-        viewmodel.saveSearch(binding.etMain.text.toString())
-        viewmodel.rquserlist.observe(this,Observer{
-            if(it == "Successful") {
-                (binding.rvMain.adapter as UsersAdapter).update(viewmodel.liveData.value!!)
-            }else{
-                Toast.makeText(this,"No Users List ",Toast.LENGTH_SHORT).show()
+        viewmodel.fetchUsers(binding.etMain.text.toString())
+        viewmodel.rquserlist.observe(this) {
+            if (it == "Successful") {
+                viewmodel.liveData.value?.let { userList ->
+                    (binding.rvMain.adapter as UsersAdapter).update(
+                        userList
+                    )
+                }
+            } else {
+                Toast.makeText(this, "No Users List ", Toast.LENGTH_SHORT).show()
             }
-            })
         }
+    }
 }
