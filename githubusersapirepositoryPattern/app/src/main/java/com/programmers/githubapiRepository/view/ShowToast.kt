@@ -1,11 +1,14 @@
 package com.programmers.githubapiRepository.view
 
 import android.content.Context
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 
-class ShowToast(private val context: Context) {
-
-    fun toastEvent(string: String) {
-        android.widget.Toast.makeText(context, string, android.widget.Toast.LENGTH_SHORT).show()
+    inline fun Context.toast(message:()->String){
+        Toast.makeText(this, message() , Toast.LENGTH_LONG).show()
     }
 
-}
+    inline fun Fragment.toast(message:()->String){
+        Toast.makeText(this.context, message() , Toast.LENGTH_LONG).show()
+    }
+

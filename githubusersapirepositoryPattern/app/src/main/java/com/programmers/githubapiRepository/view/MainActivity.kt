@@ -15,6 +15,8 @@ import com.programmers.githubapiRepository.databinding.ActivityMainBinding
 import com.programmers.githubapiRepository.viewmodel.MainViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 
@@ -31,17 +33,22 @@ class MainActivity : AppCompatActivity() {
         binding.search = this
         binding.rvMain.adapter = UsersAdapter(context = this)
     }
-    fun searchEvent() {
-        viewmodel.fetchUsers(binding.etMain.text.toString())
-        viewmodel.rquserlist.observe(this) {
-            if (it == "Successful" && viewmodel.stateFlow.value.size != 0) {
-                (binding.rvMain.adapter as UsersAdapter).update(viewmodel.stateFlow.value)
-                ShowToast(this).toastEvent("No Users List")
-            } else {
-                ShowToast(this).toastEvent(viewmodel.rquserlist.toString())
-            }
+      fun searchEvent() {
+          lifecycleScope.launch {
+              viewmodel.rqUserList.collectLatest {
+                  viewmodel.fetchUsers(binding.etMain.text.toString())
+                  when (viewmodel.rqUserList.value == "Successful") {
+                      true -> { if( viewmodel.stateFlow.value.size != 0) (binding.rvMain.adapter as UsersAdapter).update(viewmodel.stateFlow.value)
+                            else this@MainActivity.toast {"No Users List" }
+                      }
+                      else ->  this@MainActivity.toast { viewmodel.rqUserList.value }
+                  }
+
+              }
+
+          }
+
         }
+
     }
 
-
-}

@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 class MainViewModel : ViewModel() {
 
     private val _stateFlow = MutableStateFlow(mutableListOf<UsersData>())
-    private val _rqUserList =  MutableStateFlow("Successful")
+    private val _rqUserList =  MutableStateFlow("def")
      val _apiHelper = UserInterfaceFlowImpl(UsersServiceManager.getRetrofitService)
 
     val stateFlow = _stateFlow.asStateFlow()
