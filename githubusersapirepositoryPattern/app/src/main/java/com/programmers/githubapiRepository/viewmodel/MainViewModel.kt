@@ -13,23 +13,21 @@ import kotlinx.coroutines.launch
 class MainViewModel : ViewModel() {
 
     val liveData = MutableLiveData<MutableList<UsersData>?>()
-    private lateinit var _liveSearch: String
-     var rquserlist: MutableLiveData<String> = MutableLiveData<String>()
-    val apiHelper = UserInterfaceFlowImpl(UsersServiceManager.getRetrofitService)
+    var rquserlist: MutableLiveData<String> = MutableLiveData<String>()
+     val apiHelper = UserInterfaceFlowImpl(UsersServiceManager.getRetrofitService)
 
-     fun fetchUsers(liveSearch: String) {
-         _liveSearch = liveSearch
-        viewModelScope.launch {
-            apiHelper.getUsers(liveSearch)
-                .flowOn(Dispatchers.IO)
-                .catch { e ->
-                    rquserlist.value =e.message.toString()
-                }
-                .collect {
-                    liveData.value = it.body()?.items
-                    rquserlist.value ="Successful"
-
-                }
-        }
-    }
+//     fun fetchUsers(liveSearch: String) {
+//        viewModelScope.launch {
+//            _apiHelper.getUsers(liveSearch)
+//                .flowOn(Dispatchers.IO)
+//                .catch { e ->
+//                    rquserlist.value =e.message.toString()
+//                }
+//                .collect {
+//                    liveData.value = it.body()?.items
+//                    rquserlist.value ="Successful"
+//
+//                }
+//        }
+//    }
 }
