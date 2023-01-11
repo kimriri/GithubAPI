@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val viewmodel: MainViewModel by viewModels()
     val TAG by lazy { this.componentName.className }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -35,14 +36,12 @@ class MainActivity : AppCompatActivity() {
         viewmodel.rquserlist.observe(this) {
             if (it == "Successful" && viewmodel.stateFlow.value.size != 0) {
                 (binding.rvMain.adapter as UsersAdapter).update(viewmodel.stateFlow.value)
-                Toast("No Users List")
+                ShowToast(this).toastEvent("No Users List")
             } else {
-                Toast(viewmodel.rquserlist.toString())
+                ShowToast(this).toastEvent(viewmodel.rquserlist.toString())
             }
         }
     }
-    fun Toast(string: String) {
-        Toast.makeText(this, string , Toast.LENGTH_SHORT).show()
-    }
+
 
 }
