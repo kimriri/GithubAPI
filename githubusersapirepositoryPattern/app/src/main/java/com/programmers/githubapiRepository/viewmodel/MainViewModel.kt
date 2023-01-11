@@ -15,22 +15,24 @@ import kotlinx.coroutines.launch
 class MainViewModel : ViewModel() {
 
     private val _stateFlow = MutableStateFlow(mutableListOf<UsersData>())
-    var stateFlow = _stateFlow.asStateFlow()
-    var rquserlist: MutableLiveData<String> = MutableLiveData<String>()
-    private val _apiHelper = UserInterfaceFlowImpl(UsersServiceManager.getRetrofitService)
+    private val _rqUserList =  MutableStateFlow("Successful")
+     val _apiHelper = UserInterfaceFlowImpl(UsersServiceManager.getRetrofitService)
+
+    val stateFlow = _stateFlow.asStateFlow()
+    val rqUserList = _rqUserList.asStateFlow()
 
     fun fetchUsers(liveSearch: String) {
         viewModelScope.launch {
             _apiHelper.getUsers(liveSearch)
                 .flowOn(Dispatchers.IO)
                 .catch { e ->
-                    rquserlist.value = e.message.toString()
+                    _rqUserList.value = e.message.toString()
                 }
                 .collect {
                     _stateFlow.value = it.body()?.items!!
-                    stateFlow = _stateFlow
-                    rquserlist.value = "Successful"
+                    _rqUserList.value = "Successful"
                 }
         }
     }
+
 }
