@@ -30,40 +30,19 @@ class MainActivity : AppCompatActivity() {
         binding.search = this
         binding.rvMain.adapter = UsersAdapter(context = this)
     }
-//    fun searchEvent() {
-//        viewmodel.fetchUsers(binding.etMain.text.toString())
-//        viewmodel.rquserlist.observe(this) {
-//            if (it == "Successful") {
-//                viewmodel.liveData.value?.let { userList ->
-//                    (binding.rvMain.adapter as UsersAdapter).update(
-//                        userList
-//                    )
-//                }
-//            } else {
-//                Toast.makeText(this, "No Users List ", Toast.LENGTH_SHORT).show()
-//            }
-//        }
-//    }
-
+    fun searchEvent() {
+        viewmodel.fetchUsers(binding.etMain.text.toString())
+        viewmodel.rquserlist.observe(this) {
+            if (it == "Successful" && viewmodel.stateFlow.value.size != 0) {
+                (binding.rvMain.adapter as UsersAdapter).update(viewmodel.stateFlow.value)
+                Toast("No Users List")
+            } else {
+                Toast(viewmodel.rquserlist.toString())
+            }
+        }
+    }
     fun Toast(string: String) {
         Toast.makeText(this, string , Toast.LENGTH_SHORT).show()
     }
 
-    fun searchEvent() {
-        lifecycleScope.launch {
-            viewmodel.apiHelper.getUsers(binding.etMain.text.toString())
-                .flowOn(Dispatchers.Main)
-                .catch { e ->
-                    Toast(e.message.toString())
-                }
-                .collect {
-                    if(it.body()?.items?.size  != 0){
-                        (binding.rvMain.adapter as UsersAdapter).update(it.body()?.items!!)
-                    }else {
-                     Toast("No Users List")
-                    }
-
-                }
-        }
-    }
 }
