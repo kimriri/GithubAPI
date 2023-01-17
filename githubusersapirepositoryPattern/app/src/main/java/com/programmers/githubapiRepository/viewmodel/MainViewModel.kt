@@ -14,25 +14,36 @@ import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
 
-    private val _stateFlow = MutableStateFlow(mutableListOf<UsersData>())
-    private val _rqUserList =  MutableStateFlow("def")
-     val _apiHelper = UserInterfaceFlowImpl(UsersServiceManager.getRetrofitService)
+    private val _userList = MutableStateFlow(mutableListOf<UsersData>())
+    val userList = _userList.asStateFlow()
 
-    val stateFlow = _stateFlow.asStateFlow()
-    val rqUserList = _rqUserList.asStateFlow()
+    private val _uiFlow = MutableLiveData<UiFlow>(UiFlow.Init)
+    val uiFlow : LiveData<UiFlow> = _uiFlow
+
+    val _apiHelper = UserInterfaceFlowImpl(UsersServiceManager.getRetrofitService)
 
     fun fetchUsers(liveSearch: String) {
         viewModelScope.launch {
             _apiHelper.getUsers(liveSearch)
                 .flowOn(Dispatchers.IO)
                 .catch { e ->
-                    _rqUserList.value = e.message.toString()
+                    _uiFlow.value = UiFlow.ErrorMessage(e)
                 }
                 .collect {
-                    _stateFlow.value = it.body()?.items!!
-                    _rqUserList.value = "Successful"
+                    if(it.body()!!.items.isNotEmpty()){
+                        _userList.value = it.body()?.items!!
+                    }else {
+                        _uiFlow.value = UiFlow.EmptyUserList
+                    }
+
                 }
         }
     }
 
+    sealed class UiFlow{
+        object EmptyUserList : UiFlow()
+        class ErrorMessage(val throwable : Throwable) : UiFlow()
+        object Init : UiFlow()
+
+    }
 }
