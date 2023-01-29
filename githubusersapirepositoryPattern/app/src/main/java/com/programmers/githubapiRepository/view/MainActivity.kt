@@ -13,6 +13,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.programmers.githubapiRepository.R
 import com.programmers.githubapiRepository.databinding.ActivityMainBinding
 import com.programmers.githubapiRepository.viewmodel.MainViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flow
@@ -44,27 +45,17 @@ class MainActivity : AppCompatActivity() {
     }
     private fun runTime() {
         lifecycleScope.launch{
-            val currentTime : Long = System.currentTimeMillis()
-
+            var runtimecount = 0
             repeatOnLifecycle(Lifecycle.State.STARTED){
-                timerFlow(currentTime).collect{
+                while (true) {
                     Log.d("ASDF", binding.tvTimer.text.toString())
+                    delay(1000)
+                    runtimecount += 1
+                    binding.tvTimer.text = "Run Time : ${runtimecount}"
                 }
             }
         }
     }
-
-    private fun timerFlow(currentTime: Long): Flow<Long> = flow {
-        var runtime = 1
-        var mRunTime = (System.currentTimeMillis() - currentTime) * 0.001
-        Timer().scheduleAtFixedRate(0,1000) {
-           // Log.d("ASDF", binding.tvTimer.text.toString())
-            runtime += 1
-            binding.tvTimer.text = "Run Time : ${runtime}"
-        }
-        emit(mRunTime.toLong())
-    }
-
 
 
     private fun observeData() {
