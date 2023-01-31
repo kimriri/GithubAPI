@@ -80,19 +80,18 @@ class MainActivity : AppCompatActivity() {
             applicationContext,
             UserDatabase::class.java, binding.tvTimer.text.toString() // DB 이름
         ).build()
-
-        var login: String = usersData[0].login
-        var avatar_url: String = usersData[0].avatar_url
-        runBlocking {
-            delay(1000L)
-            db.localUsersDataDao().insert(LocalUsersData(0, login, avatar_url))
-            Log.d("[SUCCESS]", " value is saved! name : $login , avatar_url : $avatar_url")
-        }
-
-        // IO 쓰레드에서 진행.
-        GlobalScope.launch(Dispatchers.IO) {
-            var user = db.localUsersDataDao().getUser(login)
-            Log.d("[SUCCESS]", " value getted! name : ${user.login} , avatar_url : ${user.avatar_url}")
+        for (i in 0 until  usersData.size) {
+            var login: String = usersData[i].login
+            var avatar_url: String = usersData[i].avatar_url
+            runBlocking {
+                db.localUsersDataDao().insert(LocalUsersData(i, login, avatar_url))
+                Log.d("[SUCCESS]", " value is saved! name : $login , avatar_url : $avatar_url")
+            }
+            // IO 쓰레드에서 진행.
+            GlobalScope.launch(Dispatchers.IO) {
+                var user = db.localUsersDataDao().getUser(login)
+                Log.d("[SUCCESS]", " value getted! name : ${user.login} , avatar_url : ${user.avatar_url}")
+            }
         }
     }
 
