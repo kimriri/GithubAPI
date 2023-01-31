@@ -40,6 +40,8 @@ class MainViewModel : ViewModel() {
         }
     }
 
+
+
     sealed class UiFlow{
         object EmptyUserList : UiFlow()
         class ErrorMessage(val throwable : Throwable) : UiFlow()
