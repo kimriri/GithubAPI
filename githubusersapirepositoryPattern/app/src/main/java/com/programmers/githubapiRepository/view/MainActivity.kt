@@ -46,9 +46,10 @@ class MainActivity : AppCompatActivity() {
     private fun runTime() {
         lifecycleScope.launch{
             var runtimecount = 0
+        // Lifecycle.State.~~  : ~~ 단계 에서 항상 (재)실행 한다.
             repeatOnLifecycle(Lifecycle.State.STARTED){
                 while (true) {
-                    Log.d("ASDF", binding.tvTimer.text.toString())
+                    Log.d("State.STARTED", binding.tvTimer.text.toString())
                     delay(1000)
                     runtimecount += 1
                     binding.tvTimer.text = "Run Time : ${runtimecount}"
