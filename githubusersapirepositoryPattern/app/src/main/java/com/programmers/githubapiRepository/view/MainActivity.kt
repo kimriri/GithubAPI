@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.M)
     fun searchEvent() {
-        // 네트워크 상태를 확인 하여 네트워크 통신중이 아니라면 로컬db에서 검색한다. 
+        // 네트워크 상태를 확인 하여 네트워크 통신중이 아니라면 로컬db에서 검색한다.
         if(NetworkManage().isOnline(this)) {
            viewmodel.fetchUsers(binding.etMain.text.toString())
         }else {

@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.programmers.githubapiRepository.data.UsersData
-import com.programmers.githubapiRepository.data.repository.local.LocalUsersData
 import com.programmers.githubapiRepository.databinding.UserItemBinding
 
 
