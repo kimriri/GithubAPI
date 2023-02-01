@@ -1,10 +1,11 @@
 package com.programmers.githubapiRepository.view
 
+import android.os.Build
 import android.os.Bundle
-import android.service.autofill.UserData
 import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Lifecycle
@@ -14,9 +15,9 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.room.Room
 import com.programmers.githubapiRepository.R
 import com.programmers.githubapiRepository.data.UsersData
-import com.programmers.githubapiRepository.data.repository.local.LocalUsersData
 import com.programmers.githubapiRepository.data.repository.local.UserDatabase
 import com.programmers.githubapiRepository.databinding.ActivityMainBinding
+import com.programmers.githubapiRepository.model.NetworkManage
 import com.programmers.githubapiRepository.viewmodel.MainViewModel
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collectLatest
@@ -40,8 +41,15 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     fun searchEvent() {
-        viewmodel.fetchUsers(binding.etMain.text.toString())
+        // 네트워크 상태를 확인 하여 네트워크 통신중이 아니라면 로컬db에서 검색한다. 
+        if(NetworkManage().isOnline(this)) {
+           viewmodel.fetchUsers(binding.etMain.text.toString())
+        }else {
+            getLocal(binding.etMain.text.toString())
+        }
+
     }
     private fun runTime() {
         lifecycleScope.launch{
@@ -76,25 +84,31 @@ class MainActivity : AppCompatActivity() {
 
     private fun saveLocal(usersData: MutableList<UsersData>) {
 
-        val db = Room.databaseBuilder(
+        val localUsersDB = Room.databaseBuilder(
             applicationContext,
-            UserDatabase::class.java, binding.tvTimer.text.toString() // DB 이름
+            UserDatabase::class.java, binding.etMain.text.toString()
         ).build()
-        for (i in 0 until  usersData.size) {
+        for (i in 0 until  usersData.size-1) {
             var login: String = usersData[i].login
             var avatar_url: String = usersData[i].avatar_url
             runBlocking {
-                db.localUsersDataDao().insert(LocalUsersData(i, login, avatar_url))
-                Log.d("[SUCCESS]", " value is saved! name : $login , avatar_url : $avatar_url")
-            }
-            // IO 쓰레드에서 진행.
-            GlobalScope.launch(Dispatchers.IO) {
-                var user = db.localUsersDataDao().getUser(login)
-                Log.d("[SUCCESS]", " value getted! name : ${user.login} , avatar_url : ${user.avatar_url}")
+                localUsersDB.localUsersDataDao().insert(UsersData(i,login, avatar_url))
             }
         }
     }
 
+    private fun getLocal(toString: String) {
+        val db = Room.databaseBuilder(
+            applicationContext,
+            UserDatabase::class.java, toString // DB 이름
+        ).build()
+        // 기존 .update를 Dispatchers.Main 에서 진행하였기 때문에 동일한 Dispatchers 에서 동작하도록 해야한다.
+        GlobalScope.launch(Dispatchers.Main) {
+            var user = db.localUsersDataDao().getAllUsers()
+            (binding.rvMain.adapter as UsersAdapter).update(user)
+        }
+
+    }
 
     private fun requestInvalidUsersEvent() {
         viewmodel.uiFlow.observe(this, Observer{

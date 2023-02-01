@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.programmers.githubapiRepository.data.UsersData
+import com.programmers.githubapiRepository.data.repository.local.LocalUsersData
 import com.programmers.githubapiRepository.databinding.UserItemBinding
 
 
@@ -40,8 +41,6 @@ class UsersAdapter(private val context: Context) : RecyclerView.Adapter<UsersAda
     fun update(list: MutableList<UsersData>) {
         userList = list
         notifyDataSetChanged()
-
-
     }
 }
 
