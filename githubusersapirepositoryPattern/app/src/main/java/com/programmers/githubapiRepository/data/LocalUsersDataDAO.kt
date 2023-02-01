@@ -1,4 +1,4 @@
-package com.programmers.githubapiRepository.data.repository.local
+package com.programmers.githubapiRepository.data
 
 import androidx.room.Dao
 import androidx.room.Delete
