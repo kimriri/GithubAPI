@@ -1,10 +1,15 @@
 package com.programmers.githubapiRepository.viewmodel
 
+import android.content.Context
 import androidx.lifecycle.*
+import androidx.room.Room
 import com.programmers.githubapiRepository.data.UsersData
 import com.programmers.githubapiRepository.data.repository.UserInterfaceFlowImpl
+import com.programmers.githubapiRepository.data.repository.local.UserDatabase
 import com.programmers.githubapiRepository.data.repository.remote.UsersServiceManager
+import com.programmers.githubapiRepository.view.UsersAdapter
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
@@ -38,6 +43,14 @@ class MainViewModel : ViewModel() {
 
                 }
         }
+    }
+
+    fun getLocal(toString: String, context: Context) {
+        viewModelScope.launch {
+            val db = Room.databaseBuilder(context, UserDatabase::class.java, toString ).build()
+            _userList.value = db.localUsersDataDao().getAllUsers()
+        }
+
     }
 
 

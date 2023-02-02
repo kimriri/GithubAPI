@@ -27,12 +27,14 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val viewmodel: MainViewModel by viewModels()
+    private var bNetworkManage = false
     val TAG by lazy { this.componentName.className }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val currentTime : Long = System.currentTimeMillis()
-        val currentTimeLong = currentTime
+        bNetworkManage = NetworkManage().isOnline(this)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.search = this
         binding.rvMain.adapter = UsersAdapter(context = this)
@@ -41,13 +43,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
     fun searchEvent() {
         // 네트워크 상태를 확인 하여 네트워크 통신중이 아니라면 로컬db에서 검색한다.
-        if(NetworkManage().isOnline(this)) {
+        if(bNetworkManage) {
            viewmodel.fetchUsers(binding.etMain.text.toString())
         }else {
-            getLocal(binding.etMain.text.toString())
+            viewmodel.getLocal(binding.etMain.text.toString(),this)
         }
 
     }
@@ -69,11 +70,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun observeData() {
         lifecycleScope.launch {
-
             viewmodel.userList.collectLatest {
                 if (it.isNotEmpty()) {
                     (binding.rvMain.adapter as UsersAdapter).update(it)
-                    saveLocal(it)
+                    if(bNetworkManage) saveLocal(it)
 
                 }
             }
@@ -96,19 +96,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-    private fun getLocal(toString: String) {
-        val db = Room.databaseBuilder(
-            applicationContext,
-            UserDatabase::class.java, toString // DB 이름
-        ).build()
-        // 기존 .update를 Dispatchers.Main 에서 진행하였기 때문에 동일한 Dispatchers 에서 동작하도록 해야한다.
-        GlobalScope.launch(Dispatchers.Main) {
-            var user = db.localUsersDataDao().getAllUsers()
-            (binding.rvMain.adapter as UsersAdapter).update(user)
-        }
-
-    }
+    
 
     private fun requestInvalidUsersEvent() {
         viewmodel.uiFlow.observe(this, Observer{

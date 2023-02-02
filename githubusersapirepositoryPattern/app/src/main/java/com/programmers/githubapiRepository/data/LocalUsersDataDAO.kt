@@ -10,6 +10,7 @@ import com.programmers.githubapiRepository.data.UsersData
 @Dao
 interface LocalUsersDataDAO {
 
+    // REPLACE = 이전 데이터를 제거 하고 새로운 데이터로 변경 ( 중복 방지 )
     @Insert(onConflict = REPLACE)
     suspend fun insert(user: UsersData)
 
