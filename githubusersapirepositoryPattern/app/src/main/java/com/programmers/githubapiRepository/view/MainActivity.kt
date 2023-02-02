@@ -1,5 +1,6 @@
 package com.programmers.githubapiRepository.view
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -40,7 +41,13 @@ class MainActivity : AppCompatActivity() {
         binding.rvMain.adapter = UsersAdapter(context = this)
         runTime()
         observeData()
-
+        (binding.rvMain.adapter as UsersAdapter).setItemClickListener(object: UsersAdapter.OnItemClickListener{
+            override fun onClick(v: View, position: Int) {
+                val intent = Intent(this@MainActivity,DetailActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        })
     }
 
     fun searchEvent() {
@@ -96,7 +103,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    
+
 
     private fun requestInvalidUsersEvent() {
         viewmodel.uiFlow.observe(this, Observer{
