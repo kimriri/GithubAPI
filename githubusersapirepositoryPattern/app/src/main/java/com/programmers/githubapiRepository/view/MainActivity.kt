@@ -81,8 +81,9 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch {
             viewmodel.userList.collectLatest {
                 if (it.isNotEmpty()) {
-                    (binding.rvMain.adapter as UsersAdapter).update(it)
                     if(bNetworkManage) saveLocal(it)
+                    (binding.rvMain.adapter as UsersAdapter).update(it)
+
 
                 }
             }
