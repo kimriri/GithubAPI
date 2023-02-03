@@ -44,6 +44,8 @@ class MainActivity : AppCompatActivity() {
         (binding.rvMain.adapter as UsersAdapter).setItemClickListener(object: UsersAdapter.OnItemClickListener{
             override fun onClick(v: View, position: Int) {
                 val intent = Intent(this@MainActivity,DetailActivity::class.java)
+                intent.putExtra("user",viewmodel.userList.value[position].login)
+                intent.putExtra("search",binding.etMain.text.toString())
                 startActivity(intent)
                 finish()
             }

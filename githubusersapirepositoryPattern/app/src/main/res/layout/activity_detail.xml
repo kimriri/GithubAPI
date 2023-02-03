@@ -3,9 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="user"
+            type="com.programmers.githubapiRepository.view.DetailActivity"/>
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/user_item_img_photo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/user_item_tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/name"
+            android:textColor="@color/black"
+            android:layout_marginStart="22dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/user_item_img_photo"
+            app:layout_constraintStart_toEndOf="@+id/user_item_img_photo"
+            app:layout_constraintTop_toTopOf="@+id/user_item_img_photo" />
+
 
 
 
