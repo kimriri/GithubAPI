@@ -14,8 +14,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.room.Room
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.programmers.githubapiRepository.R
 import com.programmers.githubapiRepository.data.UsersData
+import com.programmers.githubapiRepository.data.repository.local.MIGRATION_1_2
 import com.programmers.githubapiRepository.data.repository.local.UserDatabase
 import com.programmers.githubapiRepository.databinding.ActivityMainBinding
 import com.programmers.githubapiRepository.model.NetworkManage
@@ -44,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         (binding.rvMain.adapter as UsersAdapter).setItemClickListener(object: UsersAdapter.OnItemClickListener{
             override fun onClick(v: View, position: Int) {
                 val intent = Intent(this@MainActivity,DetailActivity::class.java)
+         //       intent.putExtra("dbname",binding.etMain.text.toString())
                 intent.putExtra("user",viewmodel.userList.value[position].login)
                 intent.putExtra("search",binding.etMain.text.toString())
                 startActivity(intent)
@@ -97,17 +101,16 @@ class MainActivity : AppCompatActivity() {
         val localUsersDB = Room.databaseBuilder(
             applicationContext,
             UserDatabase::class.java, binding.etMain.text.toString()
-        ).build()
+        ).addMigrations(MIGRATION_1_2).build()
         for (i in 0 until  usersData.size-1) {
-            var login: String = usersData[i].login
-            var avatar_url: String = usersData[i].avatar_url
+            val dbname : String = binding.etMain.text.toString()
+            val login: String = usersData[i].login
+            val avatar_url: String = usersData[i].avatar_url
             runBlocking {
-                localUsersDB.localUsersDataDao().insert(UsersData(i,login, avatar_url))
+                localUsersDB.localUsersDataDao().insert(UsersData(i,login, avatar_url,false))
             }
         }
     }
-
-
     private fun requestInvalidUsersEvent() {
         viewmodel.uiFlow.observe(this, Observer{
                 when (it) {
@@ -123,7 +126,6 @@ class MainActivity : AppCompatActivity() {
                     MainViewModel.UiFlow.Init -> {}
                 }
         })
-
     }
 }
 
