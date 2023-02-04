@@ -2,7 +2,6 @@ package com.programmers.githubapiRepository.data
 
 import androidx.room.*
 import androidx.room.OnConflictStrategy.Companion.REPLACE
-import com.programmers.githubapiRepository.data.UsersData
 
 @Dao
 interface LocalUsersDataDAO {
@@ -14,6 +13,12 @@ interface LocalUsersDataDAO {
     @Query("SELECT * FROM LOCALUSERSDATE")
     suspend fun getAllUsers(): MutableList<UsersData>
 
+    @Update
+    suspend fun updateUser(user : UsersData)
+
     @Query("SELECT * FROM LOCALUSERSDATE WHERE login = :login")
     suspend fun getUser(login: String): UsersData
+
+    @Query("SELECT * FROM LOCALUSERSDATE WHERE favorite = :favorite")
+    suspend fun isfavorite(favorite: Char): UsersData
 }

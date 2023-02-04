@@ -14,8 +14,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.room.Room
-import androidx.room.migration.Migration
-import androidx.sqlite.db.SupportSQLiteDatabase
 import com.programmers.githubapiRepository.R
 import com.programmers.githubapiRepository.data.UsersData
 import com.programmers.githubapiRepository.data.repository.local.MIGRATION_1_2
@@ -47,9 +45,11 @@ class MainActivity : AppCompatActivity() {
         (binding.rvMain.adapter as UsersAdapter).setItemClickListener(object: UsersAdapter.OnItemClickListener{
             override fun onClick(v: View, position: Int) {
                 val intent = Intent(this@MainActivity,DetailActivity::class.java)
-         //       intent.putExtra("dbname",binding.etMain.text.toString())
                 intent.putExtra("user",viewmodel.userList.value[position].login)
+                intent.putExtra("url",viewmodel.userList.value[position].avatar_url)
                 intent.putExtra("search",binding.etMain.text.toString())
+                intent.putExtra("isMyFavorite",viewmodel.userList.value[position].favorite)
+                intent.putExtra("pos",position)
                 startActivity(intent)
                 finish()
             }
@@ -85,10 +85,8 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch {
             viewmodel.userList.collectLatest {
                 if (it.isNotEmpty()) {
-                    if(bNetworkManage) saveLocal(it)
                     (binding.rvMain.adapter as UsersAdapter).update(it)
-
-
+                    if(bNetworkManage) saveLocal(it)
                 }
             }
         }
@@ -103,11 +101,12 @@ class MainActivity : AppCompatActivity() {
             UserDatabase::class.java, binding.etMain.text.toString()
         ).addMigrations(MIGRATION_1_2).build()
         for (i in 0 until  usersData.size-1) {
-            val dbname : String = binding.etMain.text.toString()
             val login: String = usersData[i].login
             val avatar_url: String = usersData[i].avatar_url
+
+
             runBlocking {
-                localUsersDB.localUsersDataDao().insert(UsersData(i,login, avatar_url,false))
+                localUsersDB.localUsersDataDao().insert(UsersData(i,login, avatar_url,usersData[i].favorite))
             }
         }
     }

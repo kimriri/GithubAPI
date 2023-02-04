@@ -45,7 +45,7 @@
             android:id="@+id/iv_like_btn"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/baseline_favorite"
+            android:src="@drawable/baseline_favorite_border"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
