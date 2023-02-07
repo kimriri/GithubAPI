@@ -44,7 +44,7 @@ class DetailActivity : AppCompatActivity() {
             binding.userItemTvName.text = userDetail
         }
 
-        binding.detailIvLikeBtn.setOnClickListener {
+        binding.detailIvLikeBtn.setOnClickListener {   
             runBlocking {
 
                 localUsersDB.localUsersDataDao().updateUser(UsersData(
