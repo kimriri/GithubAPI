@@ -46,10 +46,7 @@ class MainActivity : AppCompatActivity() {
             override fun onClick(v: View, position: Int) {
                 val intent = Intent(this@MainActivity,DetailActivity::class.java)
                 intent.putExtra("user",viewmodel.userList.value[position].login)
-                intent.putExtra("url",viewmodel.userList.value[position].avatar_url)
                 intent.putExtra("search",binding.etMain.text.toString())
-                intent.putExtra("isMyFavorite",viewmodel.userList.value[position].favorite)
-                intent.putExtra("pos",position)
                 startActivity(intent)
                 finish()
             }
