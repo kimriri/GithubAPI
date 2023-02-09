@@ -23,9 +23,9 @@ class MainViewModel : ViewModel() {
     val userList = _userList.asStateFlow()
 
     private val _uiFlow = MutableLiveData<UiFlow>(UiFlow.Init)
-    val uiFlow : LiveData<UiFlow> = _uiFlow
+    val uiFlow: LiveData<UiFlow> = _uiFlow
 
-    val _apiHelper = UserInterfaceFlowImpl(UsersServiceManager.getRetrofitService)
+    private val _apiHelper = UserInterfaceFlowImpl(UsersServiceManager.getRetrofitService)
 
     fun fetchUsers(liveSearch: String) {
         viewModelScope.launch {
@@ -35,29 +35,27 @@ class MainViewModel : ViewModel() {
                     _uiFlow.value = UiFlow.ErrorMessage(e)
                 }
                 .collect {
-                    if(it.body()!!.items.isNotEmpty()){
+                    if (it.body()!!.items.isNotEmpty()) {
                         _userList.value = it.body()?.items!!
-                    }else {
+                    } else {
                         _uiFlow.value = UiFlow.EmptyUserList
                     }
-
                 }
         }
     }
 
     fun getLocal(toString: String, context: Context) {
         viewModelScope.launch {
-            val db = Room.databaseBuilder(context, UserDatabase::class.java, toString ).build()
+            val db = Room.databaseBuilder(context, UserDatabase::class.java, toString).build()
             _userList.value = db.localUsersDataDao().getAllUsers()
         }
 
     }
 
 
-
-    sealed class UiFlow{
+    sealed class UiFlow {
         object EmptyUserList : UiFlow()
-        class ErrorMessage(val throwable : Throwable) : UiFlow()
+        class ErrorMessage(val throwable: Throwable) : UiFlow()
         object Init : UiFlow()
 
     }

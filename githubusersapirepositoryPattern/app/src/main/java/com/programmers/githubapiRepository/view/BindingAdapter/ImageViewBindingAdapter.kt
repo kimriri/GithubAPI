@@ -7,9 +7,9 @@ import com.bumptech.glide.request.RequestOptions
 
 
 @BindingAdapter("profileImage")
-    fun ImageView.profileImage(imageUrl: String) {
-        Glide.with(this)
-            .load(imageUrl)
-            .apply(RequestOptions.centerCropTransform())
-            .into(this)
+fun ImageView.profileImage(imageUrl: String) {
+    Glide.with(this)
+        .load(imageUrl)
+        .apply(RequestOptions.centerCropTransform())
+        .into(this)
 }
