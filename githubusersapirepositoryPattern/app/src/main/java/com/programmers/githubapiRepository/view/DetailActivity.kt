@@ -11,9 +11,6 @@ import androidx.room.Room
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.programmers.githubapiRepository.R
-import com.programmers.githubapiRepository.data.UsersData
-import com.programmers.githubapiRepository.data.repository.local.MIGRATION_1_2
-import com.programmers.githubapiRepository.data.repository.local.UserDatabase
 import com.programmers.githubapiRepository.databinding.ActivityDetailBinding
 import com.programmers.githubapiRepository.viewmodel.DetailViewModel
 import kotlinx.coroutines.flow.collectLatest
@@ -30,52 +27,32 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detail)
-        val userDetail = intent.getStringExtra("user")
+        val userDetail = intent.getIntExtra("pos",0)
         val searchDetail = intent.getStringExtra("search")
-        observeDetailData(searchDetail!!, context, userDetail!!)
-
+        observeDetailData(userDetail, context)
 
         binding.detailIvLikeBtn.setOnClickListener {
-            runBlocking {
-                viewmodel.getUserIndex(searchDetail, context, userDetail)
-
-                //   val asdf = localUsersDB.localUsersDataDao().getUser(userDetail).favorite
-
-//
-//                if(asdf){
-//                    binding.detailIvLikeBtn.setImageResource(R.drawable.baseline_favorite)
-//                }else {
-//                    binding.detailIvLikeBtn.setImageResource(R.drawable.baseline_favorite_border)
-//                }
-//                Log.d("ASDF","ASDF");
-
+            lifecycleScope.launch {
+                viewmodel.getUserIndex(searchDetail!!, context)
             }
         }
     }
 
-
-    private fun observeDetailData(searchDetail: String, context: Context, userDetail: String) {
-        viewmodel.getUserIndex(searchDetail, context, userDetail)
+    private fun observeDetailData(searchDetail: Int, context: Context) {
+        //viewmodel.userList.value[searchDetail]
+        viewmodel.getUserIndex(viewmodel.userList.value[searchDetail].login, context)
         lifecycleScope.launch {
             viewmodel.userList.collectLatest {
-                if (it.login.isNotEmpty()) {
-                    userImg(it.avatar_url)
-                    binding.userItemTvName.text = it.login
-
+                if (it.isNotEmpty()) {
+                    val id = viewmodel.userList.value[searchDetail]
+                    userImg(id.avatar_url)
+                    binding.userItemTvName.text = id.login
+                    if (id.favorite) binding.detailIvLikeBtn.setImageResource(R.drawable.baseline_favorite)
+                    else binding.detailIvLikeBtn.setImageResource(R.drawable.baseline_favorite_border)
                 }
             }
         }
-        val localUsersDB =
-            Room.databaseBuilder(applicationContext, UserDatabase::class.java, searchDetail)
-                .addMigrations(MIGRATION_1_2).build()
-        runBlocking {
 
-            if (localUsersDB.localUsersDataDao().getUser(userDetail).favorite) {
-                binding.detailIvLikeBtn.setImageResource(R.drawable.baseline_favorite)
-            } else {
-                binding.detailIvLikeBtn.setImageResource(R.drawable.baseline_favorite_border)
-            }
-        }
     }
 
     fun userImg(url: String?) {

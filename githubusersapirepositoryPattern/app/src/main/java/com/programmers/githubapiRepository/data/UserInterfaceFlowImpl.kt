@@ -1,5 +1,6 @@
-package com.programmers.githubapiRepository.data.repository
+package com.programmers.githubapiRepository.data
 
+import com.programmers.githubapiRepository.data.UserInterfaceFlow
 import com.programmers.githubapiRepository.data.UserResponse
 import com.programmers.githubapiRepository.data.repository.remote.UsersInterface
 import kotlinx.coroutines.flow.Flow

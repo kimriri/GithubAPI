@@ -1,4 +1,4 @@
-package com.programmers.githubapiRepository.data.repository
+package com.programmers.githubapiRepository.data
 
 import com.programmers.githubapiRepository.data.UserResponse
 import kotlinx.coroutines.flow.Flow

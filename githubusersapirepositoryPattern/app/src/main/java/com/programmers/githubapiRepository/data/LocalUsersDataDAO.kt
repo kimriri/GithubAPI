@@ -16,9 +16,9 @@ interface LocalUsersDataDAO {
     @Update
     suspend fun updateUser(user : UsersData)
 
-    @Query("SELECT * FROM LOCALUSERSDATE WHERE login = :login")
-    suspend fun getUser(login: String): UsersData
+    @Query("SELECT * FROM LOCALUSERSDATE WHERE search = :search")
+    suspend fun getUser(search: String): MutableList<UsersData>
 
-    @Query("SELECT * FROM LOCALUSERSDATE WHERE favorite = :favorite")
-    suspend fun isfavorite(favorite: Char): UsersData
+//    @Query("SELECT * FROM LOCALUSERSDATE WHERE favorite = :favorite")
+//    suspend fun isfavorite(): MutableList<UsersData>
 }
