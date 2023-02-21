@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun saveLocal(usersData: MutableList<UsersData>,search: String) {
+     fun saveLocal(usersData: MutableList<UsersData>,search: String) {
         for (i in 0 until usersData.size - 1) {
             lifecycleScope.launch {
                 UsersRoomData.localUsersRoomDB(applicationContext).localUsersDataDao()
