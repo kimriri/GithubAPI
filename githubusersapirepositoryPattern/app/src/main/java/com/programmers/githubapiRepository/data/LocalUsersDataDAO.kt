@@ -19,6 +19,9 @@ interface LocalUsersDataDAO {
     @Query("SELECT * FROM LOCALUSERSDATE WHERE search = :search")
     suspend fun getUser(search: String): MutableList<UsersData>
 
+    @Query("SELECT * FROM LOCALUSERSDATE WHERE login = :login")
+    suspend fun getUserId(login: String): MutableList<UsersData>
+
 //    @Query("SELECT * FROM LOCALUSERSDATE WHERE favorite = :favorite")
 //    suspend fun isfavorite(): MutableList<UsersData>
 }

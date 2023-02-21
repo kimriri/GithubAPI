@@ -45,6 +45,8 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this@MainActivity, DetailActivity::class.java)
                 intent.putExtra("pos",position)
                 intent.putExtra("user", viewmodel.userList.value[position].login)
+                intent.putExtra("avatar_url", viewmodel.userList.value[position].avatar_url)
+                intent.putExtra("favorite", viewmodel.userList.value[position].favorite)
                 intent.putExtra("search", binding.etMain.text.toString())
                 startActivity(intent)
                 finish()

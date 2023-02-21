@@ -1,6 +1,7 @@
 package com.programmers.githubapiRepository.viewmodel
 
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.room.Room
@@ -16,11 +17,9 @@ class DetailViewModel : ViewModel() {
     private val _userList = MutableStateFlow(mutableListOf<UsersData>())
     val userList = _userList.asStateFlow()
 
-
-    fun getUserIndex(toString: String, context: Context) {
+    fun  getUserIndex(toString: String, context: Context) {
         viewModelScope.launch {
-            _userList.value =
-                UsersRoomData.localUsersRoomDB(context).localUsersDataDao().getUser(toString)
+            _userList.value = UsersRoomData.localUsersRoomDB(context).localUsersDataDao().getUserId(toString)
         }
 
     }
