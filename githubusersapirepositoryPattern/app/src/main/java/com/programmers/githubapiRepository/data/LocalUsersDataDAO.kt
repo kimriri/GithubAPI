@@ -15,7 +15,6 @@ interface LocalUsersDataDAO {
 
     @Update
     suspend fun updateUser(user : UsersData)
-
     @Query("SELECT * FROM LOCALUSERSDATE WHERE search = :search")
     suspend fun getUser(search: String): MutableList<UsersData>
 

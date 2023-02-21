@@ -1,19 +1,16 @@
 package com.programmers.githubapiRepository.viewmodel
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.room.Room
 import com.programmers.githubapiRepository.data.UsersData
 import com.programmers.githubapiRepository.data.UsersRoomData
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class DetailViewModel : ViewModel() {
-
-
     private val _userList = MutableStateFlow(mutableListOf<UsersData>())
     val userList = _userList.asStateFlow()
 
@@ -22,6 +19,12 @@ class DetailViewModel : ViewModel() {
             _userList.value = UsersRoomData.localUsersRoomDB(context).localUsersDataDao().getUserId(toString)
         }
 
+    }
+
+    fun updateUser(user: UsersData,context : Context){
+        viewModelScope.launch(Dispatchers.IO) {
+            UsersRoomData.localUsersRoomDB(context).localUsersDataDao().updateUser(user)
+        }
     }
 
 

@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("favorite", viewmodel.userList.value[position].favorite)
                 intent.putExtra("search", binding.etMain.text.toString())
                 startActivity(intent)
-                finish()
             }
         })
     }
