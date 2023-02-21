@@ -42,6 +42,7 @@ class DetailActivity : AppCompatActivity() {
                 val userData = UsersData(userDetail, searchDetail!!, userId, avatar_url!!, changefavorite)
                 Log.e("ASDF", viewmodel.userListAll.value[userDetail].favorite.toString())
              //  setfavorite(changefavorite)
+                // 옵저버로 구독하고 있기 .. .
                 viewmodel.updateUser(userData, applicationContext)
                 requestInvalidUsersEvent(changefavorite)
 
