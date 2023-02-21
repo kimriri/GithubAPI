@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.programmers.githubapiRepository.R
 import com.programmers.githubapiRepository.data.UsersData
+import com.programmers.githubapiRepository.data.UsersRoomData
 import com.programmers.githubapiRepository.databinding.ActivityDetailBinding
 import com.programmers.githubapiRepository.viewmodel.DetailViewModel
 import kotlinx.coroutines.flow.collectLatest
@@ -32,19 +33,16 @@ class DetailActivity : AppCompatActivity() {
         val avatar_url  = intent.getStringExtra("avatar_url")
         val favorite = intent.getBooleanExtra("favorite",false)
         observeDetailData(userId!!, context)
-        setfavorite(favorite)
 
         binding.detailIvLikeBtn.setOnClickListener {
+
             lifecycleScope.launch {
-               // viewmodel.getUserIndex(searchDetail!!, context)
-                val changefavorite = !intent.getBooleanExtra("favorite",false)
-                Log.e("ASDF",changefavorite.toString())
-                val userData = UsersData(userDetail,searchDetail!!,userId,avatar_url!!,!favorite)
+                val changefavorite = !viewmodel.userList.value[userDetail].favorite
+                val userData = UsersData(userDetail,searchDetail!!,userId,avatar_url!!,changefavorite)
                 viewmodel.updateUser(userData,applicationContext)
-                setfavorite(userData.favorite)
-
-
+                setfavorite(changefavorite)
             }
+
         }
     }
 

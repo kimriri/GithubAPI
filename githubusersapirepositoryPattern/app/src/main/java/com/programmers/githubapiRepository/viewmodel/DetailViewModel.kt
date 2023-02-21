@@ -1,6 +1,7 @@
 package com.programmers.githubapiRepository.viewmodel
 
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.programmers.githubapiRepository.data.UsersData
@@ -24,6 +25,7 @@ class DetailViewModel : ViewModel() {
     fun updateUser(user: UsersData,context : Context){
         viewModelScope.launch(Dispatchers.IO) {
             UsersRoomData.localUsersRoomDB(context).localUsersDataDao().updateUser(user)
+
         }
     }
 
